@@ -8,11 +8,13 @@ AppMed_autogen/timestamp: \
 	/home/kali/Documents/UTBM/PR72/AppMed/include/core/simulation.h \
 	/home/kali/Documents/UTBM/PR72/AppMed/include/ui/gui.h \
 	/home/kali/Documents/UTBM/PR72/AppMed/include/ui/home.h \
+	/home/kali/Documents/UTBM/PR72/AppMed/include/ui/realtime.h \
 	/home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
 	/home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
 	/home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
 	/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
 	/home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp \
+	/home/kali/Documents/UTBM/PR72/AppMed/src/ui/realtime.cpp \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
 	/usr/include/asm-generic/errno.h \
@@ -274,12 +276,14 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
 	/usr/include/x86_64-linux-gnu/gnu/stubs.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/QString \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qabstractitemmodel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
@@ -289,8 +293,10 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
@@ -334,6 +340,7 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
@@ -378,9 +385,11 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QComboBox \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDoubleSpinBox \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QProgressBar \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpinBox \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
@@ -392,12 +401,15 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qcombobox.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qplaintextedit.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qprogressbar.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
@@ -463,24 +475,84 @@ AppMed_autogen/timestamp: \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
 	/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeCXXCompiler.cmake.in \
+	/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp \
 	/usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeCompilerIdDetection.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerSupport.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeFindBinUtils.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeParseImplicitIncludeInfo.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeParseImplicitLinkInfo.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeParseLibraryArchitecture.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeSystem.cmake.in \
 	/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
 	/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeTestCompilerCommon.cmake \
+	/usr/share/cmake-3.31/Modules/CMakeUnixFindMake.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/ADSP-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/ARMCC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/ARMClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/AppleClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Borland-DetermineCompiler.cmake \
 	/usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompilerInternal.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Cray-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/CrayClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Embarcadero-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Fujitsu-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/GHS-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake \
 	/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/GNU-FindBinUtils.cmake \
 	/usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/HP-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/IAR-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Intel-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/MSVC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/NVHPC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/NVIDIA-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/OrangeC-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/PGI-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/PathScale-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/SCO-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/TI-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/TIClang-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Tasking-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/Watcom-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/XL-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake \
+	/usr/share/cmake-3.31/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake \
 	/usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
 	/usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+	/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake \
+	/usr/share/cmake-3.31/Modules/Internal/FeatureTesting.cmake \
 	/usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
 	/usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
+	/usr/share/cmake-3.31/Modules/Platform/Linux-Determine-CXX.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
 	/usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \

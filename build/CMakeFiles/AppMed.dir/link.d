@@ -8,6 +8,7 @@ AppMed: \
   CMakeFiles/AppMed.dir/src/core/patient.cpp.o \
   CMakeFiles/AppMed.dir/src/ui/gui.cpp.o \
   CMakeFiles/AppMed.dir/src/ui/home.cpp.o \
+  CMakeFiles/AppMed.dir/src/ui/realtime.cpp.o \
   CMakeFiles/AppMed.dir/AppMed_autogen/3YJK5W5UP7/qrc_resources.cpp.o \
   /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.17 \
   /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.17 \
@@ -82,6 +83,8 @@ CMakeFiles/AppMed.dir/src/core/patient.cpp.o:
 CMakeFiles/AppMed.dir/src/ui/gui.cpp.o:
 
 CMakeFiles/AppMed.dir/src/ui/home.cpp.o:
+
+CMakeFiles/AppMed.dir/src/ui/realtime.cpp.o:
 
 CMakeFiles/AppMed.dir/AppMed_autogen/3YJK5W5UP7/qrc_resources.cpp.o:
 

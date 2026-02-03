@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp" "CMakeFiles/AppMed.dir/src/core/simulation.cpp.o" "gcc" "CMakeFiles/AppMed.dir/src/core/simulation.cpp.o.d"
   "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp" "CMakeFiles/AppMed.dir/src/ui/gui.cpp.o" "gcc" "CMakeFiles/AppMed.dir/src/ui/gui.cpp.o.d"
   "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp" "CMakeFiles/AppMed.dir/src/ui/home.cpp.o" "gcc" "CMakeFiles/AppMed.dir/src/ui/home.cpp.o.d"
+  "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/realtime.cpp" "CMakeFiles/AppMed.dir/src/ui/realtime.cpp.o" "gcc" "CMakeFiles/AppMed.dir/src/ui/realtime.cpp.o.d"
   "" "AppMed" "gcc" "CMakeFiles/AppMed.dir/link.d"
   )
 

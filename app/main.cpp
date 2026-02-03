@@ -11,6 +11,7 @@
 #include "core/simulation.h"
 #include "ui/gui.h"
 #include "ui/home.h"
+#include "ui/realtime.h"
 
 namespace {
 
@@ -233,23 +234,27 @@ int main(int argc, char *argv[]) {
     // Création des pages
     HomeWindow *homePage = new HomeWindow();
     SimulationWindow *simPage = new SimulationWindow();
+    RealTimeWindow *realTimePage = new RealTimeWindow();
 
     // Ajout à la pile
-    stackedWidget->addWidget(homePage); // Index 0
-    stackedWidget->addWidget(simPage);  // Index 1
+    stackedWidget->addWidget(homePage);     // Index 0
+    stackedWidget->addWidget(simPage);      // Index 1
+    stackedWidget->addWidget(realTimePage); // Index 2
 
     // Logique de navigation (Connexion des signaux)
     QObject::connect(homePage, &HomeWindow::startInstantSimulation, [=]() {
-      simPage->set_mode_temps_reel(false); // Mode classique
-      stackedWidget->setCurrentIndex(1);   // Aller à la page simu
+      stackedWidget->setCurrentIndex(1); // Aller à la page simu
     });
 
     QObject::connect(homePage, &HomeWindow::startRealTimeSimulation, [=]() {
-      simPage->set_mode_temps_reel(true); // Mode temps réel
-      stackedWidget->setCurrentIndex(1);  // Aller à la page simu
+      stackedWidget->setCurrentIndex(2); // Aller à la page temps réel
     });
 
     QObject::connect(simPage, &SimulationWindow::retourAccueil, [=]() {
+      stackedWidget->setCurrentIndex(0); // Retour à l'accueil
+    });
+
+    QObject::connect(realTimePage, &RealTimeWindow::retourAccueil, [=]() {
       stackedWidget->setCurrentIndex(0); // Retour à l'accueil
     });
 
