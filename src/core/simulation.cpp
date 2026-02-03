@@ -171,6 +171,15 @@ int Simulation::pick_next_patient(double now) {
 }
 
 void Simulation::try_schedule_surgery(double now) {
+<<<<<<< HEAD
+=======
+  // On ne commence plus de nouvelles chirurgies si l'horizon est atteint ou
+  // dépassé.
+  if (now >= horizon_minutes_) {
+    return;
+  }
+
+>>>>>>> 45492c1 (Fix git de merde)
   while (busy_operating_rooms_ < config_.operating_rooms &&
          busy_surgeons_ < config_.surgeon_count && !waiting_patients_.empty()) {
     const int patient_id = pick_next_patient(now);
@@ -333,7 +342,12 @@ SimulationReport Simulation::run() {
       // --- NOUVEAU : Calcul du Retard ---
       // Si c'est un patient programmé et qu'il attend > 15 min, il est en
       // retard
+<<<<<<< HEAD
       if (p.type == PatientType::Elective && wait > 15.0) {
+=======
+      // if (p.type == PatientType::Elective && wait > 15.0) {
+      if (wait > 15.0) {
+>>>>>>> 45492c1 (Fix git de merde)
         report.operations_delayed++;
       }
     }

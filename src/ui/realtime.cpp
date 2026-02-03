@@ -1,5 +1,9 @@
 #include "ui/realtime.h"
 #include <QDateTime>
+<<<<<<< HEAD
+=======
+#include <QDialog>
+>>>>>>> 45492c1 (Fix git de merde)
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QHBoxLayout>
@@ -498,6 +502,7 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
     // 2. Le patient attend (Arrivé mais Chirurgie pas commencée)
     else if (p.start_surgery_time < 0 ||
              temps_actuel_minutes_ < p.start_surgery_time) {
+<<<<<<< HEAD
       // Cas spécial : Annulé (si start_surgery_time est -1 et qu'on a dépassé
       // un certain temps ?) Pour l'instant on suppose qu'il attend.
       itemState->setText("EN ATTENTE BLOC");
@@ -505,6 +510,26 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
       itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
 
       // Calcul du retard en temps réel
+=======
+
+      // A. CAS ANNULÉ : Il n'a jamais été opéré (start < 0) ET on a dépassé
+      // l'heure limite
+      if (p.start_surgery_time < 0 &&
+          temps_actuel_minutes_ >= horizon_minutes_) {
+        itemState->setText("🚫 ANNULÉ");
+        itemState->setForeground(QBrush(QColor("#64748b"))); // Gris Ardoise
+        itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+      }
+      // B. CAS ATTENTE : On est encore dans les horaires ou il va être opéré
+      // bientôt
+      else {
+        itemState->setText("EN ATTENTE BLOC");
+        itemState->setForeground(QBrush(QColor("#f97316"))); // Orange
+        itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+      }
+
+      // Calcul de l'attente (valable dans les deux cas)
+>>>>>>> 45492c1 (Fix git de merde)
       double attente = temps_actuel_minutes_ - p.arrival_time;
       itemDelay->setText(QString::number(attente, 'f', 0) + " min");
     }
@@ -596,6 +621,11 @@ void RealTimeWindow::terminer_simulation() {
   log_console_->appendPlainText(
       ">>> Vous pouvez analyser les logs ci-dessus ou les exporter.");
 
+<<<<<<< HEAD
+=======
+  log_console_->appendPlainText(">>> Affichage du rapport de performance...");
+
+>>>>>>> 45492c1 (Fix git de merde)
   // Mise à jour des boutons
   btn_start_->setText("Recommencer"); // Change le texte pour être clair
   btn_start_->setEnabled(
@@ -603,6 +633,10 @@ void RealTimeWindow::terminer_simulation() {
   btn_pause_->setEnabled(false);
   btn_stop_->setEnabled(true);   // Le bouton Réinitialiser reste dispo
   btn_export_->setEnabled(true); // On peut sauvegarder !
+<<<<<<< HEAD
+=======
+  afficher_rapport_fin();
+>>>>>>> 45492c1 (Fix git de merde)
 }
 
 void RealTimeWindow::exporter_logs() {
@@ -649,6 +683,178 @@ void RealTimeWindow::exporter_logs() {
   QMessageBox::information(this, "Succès", "Exportation CSV réussie !");
 }
 
+<<<<<<< HEAD
+=======
+void RealTimeWindow::afficher_rapport_fin() {
+  // 1. CALCUL DES STATISTIQUES FINALES
+  int total_programmes = 0;
+  int total_urgences = 0;
+  int operes = 0;
+  int annules = 0;
+  int retards = 0;
+  double temps_attente_total = 0.0;
+
+  for (const auto &p : patients_snapshots_) {
+    // On ne compte que les patients qui devaient arriver avant la fin
+    if (p.arrival_time > horizon_minutes_)
+      continue;
+
+    if (p.type == PatientType::Urgent)
+      total_urgences++;
+    else
+      total_programmes++;
+
+    if (p.start_surgery_time >= 0) {
+      operes++;
+      double attente = p.start_surgery_time - p.arrival_time;
+      temps_attente_total += attente;
+      if (attente > 15.0)
+        retards++;
+    } else {
+      annules++;
+    }
+  }
+
+  double attente_moyenne = (operes > 0) ? (temps_attente_total / operes) : 0.0;
+  int total_patients = total_programmes + total_urgences;
+  double taux_succes =
+      (total_patients > 0)
+          ? (static_cast<double>(operes) / total_patients * 100.0)
+          : 0.0;
+
+  // Calcul de la Note (Gamification)
+  QString note = "C";
+  QString couleur_note = "orange";
+  if (taux_succes >= 95.0 && retards == 0) {
+    note = "A+";
+    couleur_note = "#10b981";
+  } // Vert
+  else if (taux_succes >= 90.0) {
+    note = "A";
+    couleur_note = "#10b981";
+  } else if (taux_succes >= 80.0) {
+    note = "B";
+    couleur_note = "#3b82f6";
+  } // Bleu
+  else if (taux_succes < 50.0) {
+    note = "F";
+    couleur_note = "#ef4444";
+  } // Rouge
+
+  // 2. CRÉATION DE LA FENÊTRE (DIALOG)
+  QDialog rapport(this);
+  rapport.setWindowTitle("Rapport de Fin de Journée");
+  rapport.setFixedSize(500, 450);
+  rapport.setStyleSheet("background-color: white;");
+
+  auto *layout = new QVBoxLayout(&rapport);
+  layout->setSpacing(20);
+  layout->setContentsMargins(30, 30, 30, 30);
+
+  // TITRE + NOTE
+  auto *header = new QHBoxLayout();
+  auto *lbl_titre = new QLabel("Performance du Bloc");
+  lbl_titre->setStyleSheet(
+      "font-size: 18pt; font-weight: bold; color: #1e293b;");
+
+  auto *lbl_note = new QLabel(note);
+  lbl_note->setStyleSheet(
+      QString("font-size: 24pt; font-weight: 900; color: %1; border: 3px solid "
+              "%1; border-radius: 5px; padding: 5px 15px;")
+          .arg(couleur_note));
+
+  header->addWidget(lbl_titre);
+  header->addStretch();
+  header->addWidget(lbl_note);
+  layout->addLayout(header);
+
+  // GRAPHIQUE BARRE DE RÉPARTITION (VISUEL)
+  auto *lbl_visu = new QLabel("Répartition des Patients :");
+  lbl_visu->setStyleSheet(
+      "font-weight: bold; color: #64748b; margin-top: 10px;");
+  layout->addWidget(lbl_visu);
+
+  auto *bar_container = new QWidget();
+  bar_container->setFixedHeight(30);
+  auto *bar_layout = new QHBoxLayout(bar_container);
+  bar_layout->setContentsMargins(0, 0, 0, 0);
+  bar_layout->setSpacing(2);
+
+  // Barre Verte (Opérés)
+  if (operes > 0) {
+    auto *bar_ok = new QLabel(QString::number(operes));
+    bar_ok->setAlignment(Qt::AlignCenter);
+    bar_ok->setStyleSheet("background-color: #10b981; color: white; "
+                          "font-weight: bold; border-radius: 4px;");
+    bar_layout->addWidget(
+        bar_ok,
+        operes); // Le 2eme paramètre est le "stretch factor" (proportion)
+  }
+  // Barre Grise (Annulés)
+  if (annules > 0) {
+    auto *bar_ko = new QLabel(QString::number(annules));
+    bar_ko->setAlignment(Qt::AlignCenter);
+    bar_ko->setStyleSheet("background-color: #cbd5e1; color: #475569; "
+                          "font-weight: bold; border-radius: 4px;");
+    bar_layout->addWidget(bar_ko, annules);
+  }
+  layout->addWidget(bar_container);
+
+  // GRILLE DE CHIFFRES
+  auto *grid_frame = new QFrame();
+  grid_frame->setStyleSheet("background-color: #f8fafc; border-radius: 8px; "
+                            "border: 1px solid #e2e8f0;");
+  auto *grid = new QGridLayout(grid_frame);
+  grid->setContentsMargins(15, 15, 15, 15);
+  grid->setVerticalSpacing(15);
+
+  auto add_stat = [&](const QString &label, const QString &val, int r, int c) {
+    auto *l = new QLabel(label);
+    l->setStyleSheet("color: #64748b;");
+    auto *v = new QLabel(val);
+    v->setStyleSheet("color: #0f172a; font-weight: bold; font-size: 11pt;");
+    grid->addWidget(l, r, c);
+    grid->addWidget(v, r + 1, c);
+  };
+
+  add_stat("Total Patients", QString::number(total_patients), 0, 0);
+  add_stat("Urgences", QString::number(total_urgences), 0, 1);
+  add_stat("Taux Succès", QString::number(taux_succes, 'f', 1) + "%", 0, 2);
+
+  add_stat("Attente Moy.", QString::number(attente_moyenne, 'f', 0) + " min", 2,
+           0);
+  add_stat("Opérations Retardées", QString::number(retards), 2, 1);
+  add_stat("Annulations", QString::number(annules), 2, 2);
+
+  layout->addWidget(grid_frame);
+
+  // BOUTONS
+  auto *btn_layout = new QHBoxLayout();
+  btn_layout->addStretch();
+
+  auto *btn_export = new QPushButton("Exporter CSV");
+  btn_export->setCursor(Qt::PointingHandCursor);
+  btn_export->setStyleSheet(
+      "background-color: white; border: 1px solid #cbd5e1; color: #1e293b; "
+      "padding: 8px 16px; border-radius: 6px;");
+  connect(btn_export, &QPushButton::clicked, this,
+          &RealTimeWindow::exporter_logs);
+
+  auto *btn_close = new QPushButton("Fermer");
+  btn_close->setCursor(Qt::PointingHandCursor);
+  btn_close->setStyleSheet("background-color: #2563eb; color: white; padding: "
+                           "8px 16px; border-radius: 6px; font-weight: bold;");
+  connect(btn_close, &QPushButton::clicked, &rapport, &QDialog::accept);
+
+  btn_layout->addWidget(btn_export);
+  btn_layout->addWidget(btn_close);
+  layout->addLayout(btn_layout);
+
+  // Affichage modale
+  rapport.exec();
+}
+
+>>>>>>> 45492c1 (Fix git de merde)
 void RealTimeWindow::tic_horloge() {
   // 1. On avance le temps
   temps_actuel_minutes_ += 1.0;

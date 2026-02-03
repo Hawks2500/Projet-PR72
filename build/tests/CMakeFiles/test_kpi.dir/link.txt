@@ -1,1 +1,0 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/test_kpi.dir/link.d CMakeFiles/test_kpi.dir/test_kpi_autogen/mocs_compilation.cpp.o CMakeFiles/test_kpi.dir/test_kpi.cpp.o CMakeFiles/test_kpi.dir/__/src/core/simulation.cpp.o CMakeFiles/test_kpi.dir/__/src/core/patient.cpp.o -o test_kpi
