@@ -1,0 +1,166 @@
+ï»¿Temps (min);Evenement
+15.0;Debut chirurgie patient 0. (Chirurgien occupe : 1/3) (programme)
+15.0;Patient 0 arrive (programme)
+20.3;Debut chirurgie patient 12. (Chirurgien occupe : 2/3) (urgence)
+20.3;Patient 12 arrive (urgence)
+28.1;Patient 13 arrive (urgence)
+45.0;Patient 1 arrive (programme)
+51.2;Patient 14 arrive (urgence)
+53.6;Fin chirurgie patient 0. Chirurgien libere. Debut nettoyage (15.0 min)
+53.6;Debut reveil patient 0
+53.6;Debut chirurgie patient 13. (Chirurgien occupe : 2/3) (urgence)
+60.9;Fin chirurgie patient 12. Chirurgien libere. Debut nettoyage (15.0 min)
+60.9;Debut reveil patient 12
+60.9;Debut chirurgie patient 14. (Chirurgien occupe : 2/3) (urgence)
+68.6;Nettoyage termine apres patient 0. Salle libre.
+68.6;Debut chirurgie patient 1. (Chirurgien occupe : 3/3) (programme)
+75.0;Patient 2 arrive (programme)
+75.9;Nettoyage termine apres patient 12. Salle libre.
+81.7;Fin reveil patient 0
+94.6;Patient 15 arrive (urgence)
+96.3;Fin chirurgie patient 13. Chirurgien libere. Debut nettoyage (15.0 min)
+96.3;Debut reveil patient 13
+96.3;Debut chirurgie patient 15. (Chirurgien occupe : 3/3) (urgence)
+104.1;Fin chirurgie patient 14. Chirurgien libere. Debut nettoyage (15.0 min)
+104.1;Debut reveil patient 14
+104.1;Debut chirurgie patient 2. (Chirurgien occupe : 3/3) (programme)
+105.0;Patient 3 arrive (programme)
+107.0;Patient 16 arrive (urgence)
+109.8;Patient 17 arrive (urgence)
+111.3;Nettoyage termine apres patient 13. Salle libre.
+112.3;Fin reveil patient 12
+119.1;Nettoyage termine apres patient 14. Salle libre.
+121.8;Patient 18 arrive (urgence)
+130.5;Fin chirurgie patient 1. Chirurgien libere. Debut nettoyage (15.0 min)
+130.5;Debut reveil patient 1
+130.5;Debut chirurgie patient 16. (Chirurgien occupe : 3/3) (urgence)
+135.0;Patient 4 arrive (programme)
+135.9;Patient 19 arrive (urgence)
+139.1;Fin reveil patient 14
+140.6;Fin reveil patient 13
+141.4;Fin chirurgie patient 15. Chirurgien libere. Debut nettoyage (15.0 min)
+141.4;Debut reveil patient 15
+141.4;Debut chirurgie patient 17. (Chirurgien occupe : 3/3) (urgence)
+145.5;Nettoyage termine apres patient 1. Salle libre.
+147.7;Patient 20 arrive (urgence)
+156.4;Nettoyage termine apres patient 15. Salle libre.
+165.0;Patient 5 arrive (programme)
+167.3;Fin chirurgie patient 2. Chirurgien libere. Debut nettoyage (15.0 min)
+167.3;Debut reveil patient 2
+167.3;Debut chirurgie patient 18. (Chirurgien occupe : 3/3) (urgence)
+170.8;Fin reveil patient 1
+174.4;Patient 21 arrive (urgence)
+181.1;Fin reveil patient 15
+182.3;Nettoyage termine apres patient 2. Salle libre.
+184.5;Patient 22 arrive (urgence)
+192.9;Debut chirurgie patient 19. (Chirurgien occupe : 3/3) (urgence)
+192.9;Debut reveil patient 17
+192.9;Fin chirurgie patient 17. Chirurgien libere. Debut nettoyage (15.0 min)
+195.0;Patient 6 arrive (programme)
+200.2;Debut reveil patient 18
+200.2;Debut chirurgie patient 20. (Chirurgien occupe : 3/3) (urgence)
+200.2;Fin chirurgie patient 18. Chirurgien libere. Debut nettoyage (15.0 min)
+203.4;Fin reveil patient 2
+206.9;Fin chirurgie patient 16. Chirurgien libere. Debut nettoyage (15.0 min)
+206.9;Debut reveil patient 16
+206.9;Debut chirurgie patient 21. (Chirurgien occupe : 3/3) (urgence)
+207.9;Nettoyage termine apres patient 17. Salle libre.
+215.2;Nettoyage termine apres patient 18. Salle libre.
+221.9;Nettoyage termine apres patient 16. Salle libre.
+225.0;Patient 7 arrive (programme)
+249.9;Debut chirurgie patient 22. (Chirurgien occupe : 3/3) (urgence)
+249.9;Fin chirurgie patient 21. Chirurgien libere. Debut nettoyage (15.0 min)
+251.1;Fin reveil patient 18
+251.1;Debut reveil patient 21
+251.8;Fin reveil patient 16
+252.4;Fin chirurgie patient 19. Chirurgien libere. Debut nettoyage (15.0 min)
+252.4;Debut reveil patient 19
+252.4;Debut chirurgie patient 3. (Chirurgien occupe : 3/3) (programme)
+255.0;Fin chirurgie patient 20. Chirurgien libere. Debut nettoyage (15.0 min)
+255.0;Debut chirurgie patient 4. (Chirurgien occupe : 3/3) (programme)
+255.0;Patient 8 arrive (programme)
+264.9;Nettoyage termine apres patient 21. Salle libre.
+267.4;Nettoyage termine apres patient 19. Salle libre.
+269.1;Fin reveil patient 17
+269.1;Debut reveil patient 20
+270.0;Nettoyage termine apres patient 20. Salle libre.
+270.4;Patient 23 arrive (urgence)
+279.8;Fin chirurgie patient 4. Chirurgien libere. Debut nettoyage (15.0 min)
+279.8;Debut chirurgie patient 23. (Chirurgien occupe : 3/3) (urgence)
+280.4;Fin reveil patient 21
+280.4;Debut reveil patient 4
+281.8;Patient 24 arrive (urgence)
+284.9;Fin reveil patient 19
+285.0;Patient 9 arrive (programme)
+294.8;Nettoyage termine apres patient 4. Salle libre.
+294.9;Patient 25 arrive (urgence)
+310.2;Patient 26 arrive (urgence)
+313.3;Fin chirurgie patient 22. Chirurgien libere. Debut nettoyage (15.0 min)
+313.3;Debut reveil patient 22
+313.3;Debut chirurgie patient 24. (Chirurgien occupe : 3/3) (urgence)
+315.0;Patient 10 arrive (programme)
+315.7;Fin chirurgie patient 3. Chirurgien libere. Debut nettoyage (15.0 min)
+315.7;Debut chirurgie patient 25. (Chirurgien occupe : 3/3) (urgence)
+328.2;Fin reveil patient 20
+328.2;Debut reveil patient 3
+328.3;Nettoyage termine apres patient 22. Salle libre.
+330.7;Nettoyage termine apres patient 3. Salle libre.
+332.9;Patient 27 arrive (urgence)
+333.9;Fin chirurgie patient 23. Chirurgien libere. Debut nettoyage (15.0 min)
+333.9;Debut chirurgie patient 26. (Chirurgien occupe : 3/3) (urgence)
+345.0;Patient 11 arrive (programme)
+348.6;Patient 28 arrive (urgence)
+348.9;Nettoyage termine apres patient 23. Salle libre.
+353.0;Debut reveil patient 23
+353.0;Fin reveil patient 4
+355.5;Fin chirurgie patient 24. Chirurgien libere. Debut nettoyage (15.0 min)
+355.5;Debut chirurgie patient 27. (Chirurgien occupe : 3/3) (urgence)
+357.8;Patient 29 arrive (urgence)
+363.7;Fin chirurgie patient 26. Chirurgien libere. Debut nettoyage (15.0 min)
+363.7;Debut chirurgie patient 28. (Chirurgien occupe : 3/3) (urgence)
+364.5;Fin reveil patient 3
+364.5;Debut reveil patient 24
+370.5;Nettoyage termine apres patient 24. Salle libre.
+370.7;Fin chirurgie patient 25. Chirurgien libere. Debut nettoyage (15.0 min)
+370.7;Debut chirurgie patient 29. (Chirurgien occupe : 3/3) (urgence)
+371.3;Patient 30 arrive (urgence)
+375.3;Fin reveil patient 22
+375.3;Debut reveil patient 26
+378.7;Nettoyage termine apres patient 26. Salle libre.
+379.0;Patient 31 arrive (urgence)
+383.8;Fin chirurgie patient 27. Chirurgien libere. Debut nettoyage (15.0 min)
+383.8;Debut chirurgie patient 30. (Chirurgien occupe : 3/3) (urgence)
+385.7;Nettoyage termine apres patient 25. Salle libre.
+388.2;Patient 32 arrive (urgence)
+390.0;Patient 33 arrive (urgence)
+398.8;Nettoyage termine apres patient 27. Salle libre.
+410.5;Debut chirurgie patient 31. (Chirurgien occupe : 3/3) (urgence)
+410.5;Fin chirurgie patient 28. Chirurgien libere. Debut nettoyage (15.0 min)
+411.6;Fin reveil patient 24
+411.6;Debut reveil patient 25
+415.1;Fin reveil patient 23
+415.1;Debut reveil patient 27
+420.2;Fin chirurgie patient 30. Chirurgien libere. Debut nettoyage (15.0 min)
+420.2;Debut chirurgie patient 32. (Chirurgien occupe : 3/3) (urgence)
+423.1;Fin reveil patient 26
+423.1;Debut reveil patient 28
+425.5;Nettoyage termine apres patient 28. Salle libre.
+426.0;Fin reveil patient 25
+426.0;Debut reveil patient 30
+428.7;Debut chirurgie patient 33. (Chirurgien occupe : 3/3) (urgence)
+428.7;Fin chirurgie patient 29. Chirurgien libere. Debut nettoyage (15.0 min)
+435.2;Nettoyage termine apres patient 30. Salle libre.
+438.8;Patient 34 arrive (urgence)
+443.7;Nettoyage termine apres patient 29. Salle libre.
+453.3;Patient 35 arrive (urgence)
+456.4;Fin chirurgie patient 31. Chirurgien libere. Debut nettoyage (15.0 min)
+456.4;Debut chirurgie patient 34. (Chirurgien occupe : 3/3) (urgence)
+471.4;Nettoyage termine apres patient 31. Salle libre.
+477.5;Fin reveil patient 30
+477.5;Debut reveil patient 29
+477.6;Fin reveil patient 27
+477.6;Debut reveil patient 31
+478.6;Fin chirurgie patient 33. Chirurgien libere. Debut nettoyage (15.0 min)
+478.6;Debut chirurgie patient 35. (Chirurgien occupe : 3/3) (urgence)
+479.8;Fin reveil patient 28
+479.8;Debut reveil patient 33

@@ -2,10 +2,12 @@
 
 #include <QFileDialog>
 #include <QFrame>
+#include <QHeaderView>
 #include <QLabel>
 #include <QPlainTextEdit>
 #include <QProgressBar>
 #include <QPushButton>
+#include <QTableWidget>
 #include <QTimer>
 #include <QWidget>
 #include <vector>
@@ -40,6 +42,8 @@ private:
 
   void precalculer_scenario();
 
+  void mettre_a_jour_tableau_patients();
+
   // Contrôles
   QPushButton *btn_retour_;
   QPushButton *btn_start_;
@@ -52,12 +56,17 @@ private:
   QLabel *label_temps_;
   QPlainTextEdit *log_console_;
 
+  QTableWidget *table_patients_;
+
   // Logique temporelle
   QTimer *timer_;
   double temps_actuel_minutes_ = 0.0;
   double horizon_minutes_ = 480.0; // 8 heures par défaut
+  double fin_effective_minutes_ = 480.0;
   bool en_cours_ = false;
 
   std::vector<EventLog> events_queue_;
   size_t current_event_index_ = 0;
+
+  std::vector<Patient> patients_snapshots_;
 };

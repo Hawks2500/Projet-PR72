@@ -304,6 +304,7 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
@@ -387,15 +388,18 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QDoubleSpinBox \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFileDialog \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFrame \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHeaderView \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPlainTextEdit \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QProgressBar \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpinBox \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableWidget \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemdelegate.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractslider.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractspinbox.h \
@@ -405,6 +409,7 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qfiledialog.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qheaderview.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
@@ -418,6 +423,8 @@ AppMed_autogen/timestamp: \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyle.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstyleoption.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabbar.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtableview.h \
+	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtablewidget.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtabwidget.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtextedit.h \
 	/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \

@@ -410,8 +410,15 @@ CMakeFiles/AppMed.dir/app/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdir.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfileinfo.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QHeaderView \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qheaderview.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractitemview.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qitemselectionmodel.h \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QProgressBar \
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qprogressbar.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QTableWidget \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtablewidget.h \
+ /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtableview.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QTimer \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtimer.h \
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasictimer.h

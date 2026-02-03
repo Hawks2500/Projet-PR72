@@ -2,6 +2,7 @@
 #include <QDateTime>
 #include <QHBoxLayout>
 #include <QMessageBox>
+#include <QSplitter>
 #include <QTextStream>
 #include <QVBoxLayout>
 
@@ -48,11 +49,62 @@ void RealTimeWindow::precalculer_scenario() {
   // 5. On lance le calcul (c'est instantané)
   sim.run();
 
+  patients_snapshots_ = sim.get_patients();
+
+  // Cela mélange programmes et urgences selon leur ordre d'apparition réel
+  std::sort(patients_snapshots_.begin(), patients_snapshots_.end(),
+            [](const Patient &a, const Patient &b) {
+              return a.arrival_time < b.arrival_time;
+            });
+
+  // On initialise le tableau (lignes vides)
+  table_patients_->setRowCount(patients_snapshots_.size());
+  for (size_t i = 0; i < patients_snapshots_.size(); ++i) {
+    const auto &p = patients_snapshots_[i];
+
+    // Colonne ID
+    table_patients_->setItem(i, 0, new QTableWidgetItem(QString::number(p.id)));
+
+    // Colonne Type (Avec couleur)
+    auto *itemType = new QTableWidgetItem(
+        p.type == PatientType::Urgent ? "URGENCE" : "Programmé");
+    if (p.type == PatientType::Urgent)
+      itemType->setForeground(QColor("#ef4444")); // Rouge
+    table_patients_->setItem(i, 1, itemType);
+
+    // Colonne Arrivée
+    table_patients_->setItem(
+        i, 2,
+        new QTableWidgetItem(QString::number(p.arrival_time, 'f', 1) + " min"));
+
+    // Colonne État (Vide au début)
+    table_patients_->setItem(i, 3, new QTableWidgetItem("Pas encore arrivé"));
+
+    // Colonne Retard (Vide au début)
+    table_patients_->setItem(i, 4, new QTableWidgetItem("-"));
+  }
+
   // Optionnel : On s'assure que les évènements sont bien triés par ordre
   // chronologique (Normalement le moteur le fait déjà, mais c'est plus sûr)
   std::sort(
       events_queue_.begin(), events_queue_.end(),
       [](const EventLog &a, const EventLog &b) { return a.time < b.time; });
+
+  // --- AJOUT : DÉTECTION DE LA FIN RÉELLE ---
+  if (!events_queue_.empty()) {
+    // Le dernier évènement de la liste nous donne l'heure de fin absolue
+    double dernier_evenement = events_queue_.back().time;
+
+    // La fin effective est le max entre l'horizon (8h) et le dernier évènement
+    // On ajoute un petit "buffer" de 10 minutes pour que ce soit joli
+    fin_effective_minutes_ =
+        std::max(horizon_minutes_, dernier_evenement + 10.0);
+  } else {
+    fin_effective_minutes_ = horizon_minutes_;
+  }
+
+  // La barre va maintenant de 0 jusqu'à la fin réelle (ex: 10h)
+  barre_progression_->setRange(0, static_cast<int>(fin_effective_minutes_));
 
   log_console_->appendPlainText(
       QString(">>> Scénario généré : %1 évènements prêts à être joués.")
@@ -94,7 +146,7 @@ void RealTimeWindow::construire_ui() {
   lbl_progress->setObjectName("blockLabel");
 
   barre_progression_ = new QProgressBar(timeline_card);
-  barre_progression_->setRange(0, static_cast<int>(horizon_minutes_));
+  barre_progression_->setRange(0, static_cast<int>(fin_effective_minutes_));
   barre_progression_->setValue(0);
   barre_progression_->setTextVisible(false); // On gère le texte nous-mêmes
   barre_progression_->setFixedHeight(25);
@@ -111,17 +163,87 @@ void RealTimeWindow::construire_ui() {
   timeline_layout->addWidget(barre_progression_);
   timeline_layout->addWidget(label_temps_);
 
-  // --- CONSOLE DE LOGS ---
-  auto *console_card = creer_carte(this);
-  auto *console_layout = new QVBoxLayout(console_card);
+  // --- ZONE CENTRALE (SPLITTER : LOGS + TABLEAU) ---
+  auto *central_splitter = new QSplitter(Qt::Horizontal, this);
+  central_splitter->setChildrenCollapsible(false);
 
-  log_console_ = new QPlainTextEdit(console_card);
-  log_console_->setObjectName("traceConsole"); // Réutilise le style noir/bleu
+  // 1. Panneau Gauche : Console Logs
+  auto *console_container = new QWidget();
+  auto *console_layout = new QVBoxLayout(console_container);
+  console_layout->setContentsMargins(0, 0, 0, 0);
+
+  auto *lbl_console = new QLabel("Journal des évènements", console_container);
+  lbl_console->setObjectName("blockLabel");
+
+  log_console_ = new QPlainTextEdit(console_container);
+  log_console_->setObjectName("traceConsole");
   log_console_->setReadOnly(true);
-  log_console_->setPlaceholderText(
-      "En attente du lancement de la simulation...");
 
+  console_layout->addWidget(lbl_console);
   console_layout->addWidget(log_console_);
+
+  // 2. Panneau Droit : Tableau Patients
+  auto *table_container = new QWidget();
+  auto *table_layout = new QVBoxLayout(table_container);
+  table_layout->setContentsMargins(0, 0, 0, 0);
+
+  auto *lbl_table = new QLabel("État des Patients en Direct", table_container);
+  lbl_table->setObjectName("blockLabel");
+
+  table_patients_ = new QTableWidget(table_container);
+  table_patients_->setColumnCount(5);
+  table_patients_->setHorizontalHeaderLabels(
+      {"ID", "Type", "Arrivée", "État Actuel", "Attente/Retard"});
+
+  // Style du tableau
+  table_patients_->horizontalHeader()->setSectionResizeMode(
+      QHeaderView::Stretch);
+  table_patients_->verticalHeader()->setVisible(false);
+  table_patients_->setAlternatingRowColors(true);
+  table_patients_->setEditTriggers(
+      QAbstractItemView::NoEditTriggers); // Lecture seule
+  table_patients_->setStyleSheet(
+      // Style global du tableau
+      "QTableWidget {"
+      "   background-color: #ffffff;"           /* Fond blanc */
+      "   alternate-background-color: #f8fafc;" /* Fond gris très clair pour 1
+                                                   ligne sur 2 */
+      "   color: #1e293b;" /* IMPORTANT : Texte gris foncé (et pas blanc) */
+      "   gridline-color: #e2e8f0;" /* Lignes de la grille */
+      "   border: 1px solid #cbd5e1;"
+      "   border-radius: 8px;"
+      "}"
+
+      // Style des items (cellules)
+      "QTableWidget::item {"
+      "   padding: 5px;"
+      "   border-bottom: 1px solid #f1f5f9;"
+      "}"
+
+      // Style de la sélection (si on clique dessus)
+      "QTableWidget::item:selected {"
+      "   background-color: #e0f2fe;" /* Bleu très clair */
+      "   color: #0c4a6e;"
+      "}"
+
+      // Style de l'en-tête
+      "QHeaderView::section {"
+      "   background-color: #f1f5f9;" /* Gris clair */
+      "   padding: 6px;"
+      "   border: none;"
+      "   border-bottom: 2px solid #cbd5e1;"
+      "   font-weight: bold;"
+      "   color: #475569;"
+      "}");
+
+  table_layout->addWidget(lbl_table);
+  table_layout->addWidget(table_patients_);
+
+  // Ajout au splitter
+  central_splitter->addWidget(console_container);
+  central_splitter->addWidget(table_container);
+  central_splitter->setStretchFactor(0, 1); // 33% pour les logs
+  central_splitter->setStretchFactor(1, 2); // 66% pour le tableau (plus large)
 
   // --- BARRE DE CONTRÔLE (Play/Pause/Stop) ---
   auto *controls_card = creer_carte(this);
@@ -162,7 +284,7 @@ void RealTimeWindow::construire_ui() {
   // Assemblage final
   main_layout->addWidget(header);
   main_layout->addWidget(timeline_card);
-  main_layout->addWidget(console_card, 1); // Prend toute la place restante
+  main_layout->addWidget(central_splitter, 1); // Prend toute la place restante
   main_layout->addWidget(controls_card);
 
   // --- CONNEXIONS ---
@@ -179,6 +301,60 @@ void RealTimeWindow::construire_ui() {
           &RealTimeWindow::arreter_simulation);
   connect(btn_export_, &QPushButton::clicked, this,
           &RealTimeWindow::exporter_logs);
+}
+
+void RealTimeWindow::mettre_a_jour_tableau_patients() {
+  for (size_t i = 0; i < patients_snapshots_.size(); ++i) {
+    const auto &p = patients_snapshots_[i];
+
+    QTableWidgetItem *itemState = table_patients_->item(i, 3);
+    QTableWidgetItem *itemDelay = table_patients_->item(i, 4);
+
+    // --- LOGIQUE D'ÉTAT ---
+    // 1. Le patient n'est pas encore là
+    if (temps_actuel_minutes_ < p.arrival_time) {
+      itemState->setText("Pas arrivé");
+      itemState->setForeground(QBrush(QColor("#94a3b8"))); // Gris
+      itemDelay->setText("-");
+    }
+    // 2. Le patient attend (Arrivé mais Chirurgie pas commencée)
+    else if (p.start_surgery_time < 0 ||
+             temps_actuel_minutes_ < p.start_surgery_time) {
+      // Cas spécial : Annulé (si start_surgery_time est -1 et qu'on a dépassé
+      // un certain temps ?) Pour l'instant on suppose qu'il attend.
+      itemState->setText("EN ATTENTE BLOC");
+      itemState->setForeground(QBrush(QColor("#f97316"))); // Orange
+      itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+
+      // Calcul du retard en temps réel
+      double attente = temps_actuel_minutes_ - p.arrival_time;
+      itemDelay->setText(QString::number(attente, 'f', 0) + " min");
+    }
+    // 3. Le patient est au bloc (Entre début et fin chir)
+    else if (temps_actuel_minutes_ >= p.start_surgery_time &&
+             temps_actuel_minutes_ < p.end_surgery_time) {
+      itemState->setText("🔴 AU BLOC OP");
+      itemState->setForeground(QBrush(QColor("#2563eb"))); // Bleu vif
+      itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+
+      // On fige l'attente finale
+      double attente_finale = p.start_surgery_time - p.arrival_time;
+      itemDelay->setText(QString::number(attente_finale, 'f', 0) + " min");
+    }
+    // 4. Le patient est en réveil (Entre fin chir et fin réveil)
+    else if (temps_actuel_minutes_ >= p.end_surgery_time &&
+             temps_actuel_minutes_ < p.end_recovery_time) {
+      itemState->setText("🔵 EN RÉVEIL");
+      itemState->setForeground(QBrush(QColor("#8b5cf6"))); // Violet
+      itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+    }
+    // 5. Le patient est sorti
+    else {
+      itemState->setText("✅ SORTI");
+      itemState->setForeground(QBrush(QColor("#10b981"))); // Vert
+      itemState->setFont(QFont("Segoe UI", 9, QFont::Normal));
+    }
+  }
 }
 
 // --- LOGIQUE DE SIMULATION ---
@@ -216,6 +392,13 @@ void RealTimeWindow::arreter_simulation() {
 
   // Reset UI
   barre_progression_->setValue(0);
+  // --- AJOUT ---
+  // On remet le style bleu par défaut
+  barre_progression_->setStyleSheet(
+      "QProgressBar::chunk { background-color: #2563eb; border-radius: 4px; }");
+  label_temps_->setStyleSheet(
+      "font-size: 24pt; font-weight: bold; color: #1e293b;");
+
   label_temps_->setText("00:00");
   log_console_->clear();
   log_console_->setPlaceholderText("Simulation réinitialisée.");
@@ -293,11 +476,28 @@ void RealTimeWindow::tic_horloge() {
   temps_actuel_minutes_ += 1.0;
 
   // 2. Fin de simulation ?
-  if (temps_actuel_minutes_ >= horizon_minutes_) {
+  if (temps_actuel_minutes_ >= fin_effective_minutes_) {
     // arreter_simulation();
     // log_console_->appendPlainText(">>> Fin de la journée.");
     terminer_simulation();
     return;
+  }
+
+  // --- AJOUT VISUEL : GESTION DES HEURES SUPPLÉMENTAIRES ---
+  if (temps_actuel_minutes_ > horizon_minutes_) {
+    // On dépasse les 8h : On change la couleur de la barre en ORANGE ou ROUGE
+    // pour bien montrer qu'on fait du "rab".
+    barre_progression_->setStyleSheet("QProgressBar::chunk { background-color: "
+                                      "#f97316; border-radius: 4px; }" // Orange
+    );
+    label_temps_->setStyleSheet(
+        "font-size: 24pt; font-weight: bold; color: #f97316;");
+  } else {
+    // Temps normal : Bleu
+    barre_progression_->setStyleSheet("QProgressBar::chunk { background-color: "
+                                      "#2563eb; border-radius: 4px; }");
+    label_temps_->setStyleSheet(
+        "font-size: 24pt; font-weight: bold; color: #1e293b;");
   }
 
   // 3. Mise à jour Interface (Barre + Texte)
@@ -307,6 +507,9 @@ void RealTimeWindow::tic_horloge() {
   label_temps_->setText(QString("%1:%2")
                             .arg(heures, 2, 10, QChar('0'))
                             .arg(minutes, 2, 10, QChar('0')));
+
+  // Mise à jour tableau patients
+  mettre_a_jour_tableau_patients();
 
   // 4. REPLAY DES LOGS
   // On regarde tous les évènements en attente qui ont une heure <= heure
