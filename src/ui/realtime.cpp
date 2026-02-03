@@ -11,6 +11,8 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 
+#include <QGraphicsDropShadowEffect>
+
 #include <algorithm>
 
 RealTimeWindow::RealTimeWindow(QWidget *parent) : QWidget(parent) {
@@ -22,6 +24,14 @@ RealTimeWindow::RealTimeWindow(QWidget *parent) : QWidget(parent) {
 QFrame *RealTimeWindow::creer_carte(QWidget *parent) {
   auto *frame = new QFrame(parent);
   frame->setObjectName("card");
+  auto *shadow = new QGraphicsDropShadowEffect(frame);
+  shadow->setBlurRadius(12); // Flou (équivalent à votre 12px)
+  shadow->setOffset(0, 4);   // Décalage X=0, Y=4 (équivalent à 0px 4px)
+  shadow->setColor(
+      QColor(0, 0, 0, 30)); // Noir avec transparence (alpha ~10-15%)
+
+  frame->setGraphicsEffect(shadow);
+
   return frame;
 }
 

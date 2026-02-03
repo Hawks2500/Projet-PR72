@@ -24,7 +24,6 @@ QFrame#card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 20px;
-    qproperty-shadow: 0px 4px 12px rgba(0, 0, 0, 0.);
 }
 
 /* --- Typographie --- */

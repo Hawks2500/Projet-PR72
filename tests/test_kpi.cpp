@@ -138,10 +138,6 @@ void test_priorite_urgence() {
 }
 
 int main() {
-<<<<<<< HEAD
-  test_retards_et_annulations();
-  return 0;
-=======
   try {
     test_journee_ideale();
     test_saturation_realiste();
@@ -155,5 +151,4 @@ int main() {
     std::cerr << "Erreur fatale : " << e.what() << std::endl;
     return 1;
   }
->>>>>>> 45492c1 (Fix git de merde)
 }
