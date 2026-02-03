@@ -1,7 +1,11 @@
 #include "ui/realtime.h"
 #include <QDateTime>
+#include <QDoubleSpinBox>
+#include <QFormLayout>
 #include <QHBoxLayout>
+#include <QHeaderView>
 #include <QMessageBox>
+#include <QSpinBox>
 #include <QSplitter>
 #include <QTextStream>
 #include <QVBoxLayout>
@@ -109,14 +113,210 @@ void RealTimeWindow::precalculer_scenario() {
   log_console_->appendPlainText(
       QString(">>> Scénario généré : %1 évènements prêts à être joués.")
           .arg(events_queue_.size()));
+
+  mettre_a_jour_kpi();
+}
+
+QFrame *RealTimeWindow::creer_kpi_widget(const QString &titre,
+                                         QLabel *&label_valeur,
+                                         const QString &couleur) {
+  auto *frame = new QFrame();
+  frame->setObjectName("kpiCard"); // Réutilise le style CSS existant
+  frame->setStyleSheet(
+      QString("QFrame#kpiCard {"
+              "  background-color: white;"
+              "  border: 1px solid #cbd5e1;" // Bordure fine grise
+              "  border-left: 6px solid %1;" // LA BARRE COLORÉE À GAUCHE
+              "  border-radius: 8px;"        // Coins arrondis
+              "}")
+          .arg(couleur));
+  // frame->setProperty("kpiColor", couleur);
+
+  auto *layout = new QVBoxLayout(frame);
+  layout->setContentsMargins(10, 10, 10, 10);
+
+  auto *lbl_titre = new QLabel(titre);
+  lbl_titre->setStyleSheet("color: #64748b; font-size: 8pt; font-weight: bold; "
+                           "text-transform: uppercase;");
+
+  label_valeur = new QLabel("0");
+  label_valeur->setStyleSheet(
+      QString("color: %1; font-size: 20pt; font-weight: 800;").arg(couleur));
+  label_valeur->setAlignment(Qt::AlignRight);
+
+  layout->addWidget(lbl_titre);
+  layout->addWidget(label_valeur);
+  return frame;
+}
+
+void RealTimeWindow::basculer_edition_inputs(bool actif) {
+  input_horizon_->setEnabled(actif);
+  input_salles_->setEnabled(actif);
+  input_chirurgiens_->setEnabled(actif);
+  input_lits_->setEnabled(actif);
+  input_patients_->setEnabled(actif);
+  input_urgences_->setEnabled(actif);
+}
+
+void RealTimeWindow::mettre_a_jour_kpi() {
+  int count_attente = 0;
+  int count_bloc = 0;
+  int count_reveil = 0;
+  int count_sortis = 0;
+
+  // Nouveaux compteurs
+  int count_retard = 0;
+  int count_annule = 0;
+
+  for (const auto &p : patients_snapshots_) {
+    // Patient pas encore arrivé : on ignore
+    if (temps_actuel_minutes_ < p.arrival_time)
+      continue;
+
+    // 1. CALCUL DES ÉTATS (Attente, Bloc, Réveil, Sorti)
+    if (p.start_surgery_time < 0) {
+      // Cas spécial : Le patient est annulé
+      // On le compte comme "Annulé" dès qu'il est "arrivé" dans la simu
+      count_annule++;
+      continue; // On ne le compte pas dans "attente" ou autres
+    } else if (temps_actuel_minutes_ < p.start_surgery_time) {
+      count_attente++;
+    } else if (temps_actuel_minutes_ >= p.start_surgery_time &&
+               temps_actuel_minutes_ < p.end_surgery_time) {
+      count_bloc++;
+    } else if (temps_actuel_minutes_ >= p.end_surgery_time &&
+               temps_actuel_minutes_ < p.end_recovery_time) {
+      count_reveil++;
+    } else {
+      count_sortis++;
+    }
+
+    // 2. CALCUL DU RETARD (> 15 min)
+    // Le retard se calcule indépendamment de l'état actuel (c'est un cumulatif)
+    if (p.start_surgery_time >= 0) {
+      // Si l'opération a commencé (ou est finie), on connait le retard exact
+      if (temps_actuel_minutes_ >= p.start_surgery_time) {
+        if ((p.start_surgery_time - p.arrival_time) > 15.0) {
+          count_retard++;
+        }
+      }
+      // Si l'opération n'a PAS commencé (il attend), on regarde s'il attend
+      // DEPUIS trop longtemps
+      else {
+        if ((temps_actuel_minutes_ - p.arrival_time) > 15.0) {
+          count_retard++;
+        }
+      }
+    }
+  }
+
+  // Mise à jour des textes
+  kpi_attente_->setText(QString::number(count_attente));
+  kpi_au_bloc_->setText(QString::number(count_bloc));
+  kpi_en_reveil_->setText(QString::number(count_reveil));
+  kpi_sortis_->setText(QString::number(count_sortis));
+
+  // Mise à jour des nouveaux KPIs
+  kpi_retard_->setText(QString::number(count_retard));
+  kpi_annule_->setText(QString::number(count_annule));
 }
 
 void RealTimeWindow::construire_ui() {
-  auto *main_layout = new QVBoxLayout(this);
-  main_layout->setContentsMargins(24, 24, 24, 24);
+  // 1. LAYOUT PRINCIPAL HORIZONTAL (Racine)
+  // Cela permet d'avoir la barre latérale à gauche et le reste à droite
+  auto *main_layout = new QHBoxLayout(this);
+  main_layout->setContentsMargins(20, 20, 20, 20);
   main_layout->setSpacing(20);
 
-  // --- HEADER (Bouton Retour + Titre) ---
+  // ============================================================
+  // COLONNE GAUCHE : CONFIGURATION & KPIs
+  // ============================================================
+  auto *left_panel = new QWidget();
+  left_panel->setFixedWidth(320); // Largeur fixe
+  auto *left_layout = new QVBoxLayout(left_panel);
+  left_layout->setContentsMargins(0, 0, 0, 0);
+  left_layout->setSpacing(15);
+
+  // --- CARTE CONFIGURATION ---
+  auto *config_card = creer_carte(this);
+  auto *config_layout = new QVBoxLayout(config_card);
+
+  auto *titre_config = new QLabel("Paramètres", config_card);
+  titre_config->setObjectName("sectionTitle");
+  config_layout->addWidget(titre_config);
+
+  auto *form = new QFormLayout();
+  form->setLabelAlignment(Qt::AlignLeft);
+
+  // Initialisation des champs
+  input_horizon_ = new QDoubleSpinBox();
+  input_horizon_->setRange(1, 48);
+  input_horizon_->setValue(8.0);
+  input_horizon_->setSuffix(" h");
+  form->addRow("Horizon :", input_horizon_);
+
+  input_salles_ = new QSpinBox();
+  input_salles_->setRange(1, 20);
+  input_salles_->setValue(2);
+  form->addRow("Salles Op :", input_salles_);
+
+  input_chirurgiens_ = new QSpinBox();
+  input_chirurgiens_->setRange(1, 50);
+  input_chirurgiens_->setValue(3);
+  form->addRow("Chirurgiens :", input_chirurgiens_);
+
+  input_lits_ = new QSpinBox();
+  input_lits_->setRange(1, 50);
+  input_lits_->setValue(3);
+  form->addRow("Lits Réveil :", input_lits_);
+
+  input_patients_ = new QSpinBox();
+  input_patients_->setRange(0, 200);
+  input_patients_->setValue(10);
+  form->addRow("Programmes :", input_patients_);
+
+  input_urgences_ = new QDoubleSpinBox();
+  input_urgences_->setRange(0, 20);
+  input_urgences_->setValue(2.0);
+  input_urgences_->setSuffix(" /h");
+  form->addRow("Taux Urgences :", input_urgences_);
+
+  config_layout->addLayout(form);
+  left_layout->addWidget(config_card);
+
+  // --- CARTE KPIs VIVANTS ---
+  auto *kpi_group = new QWidget();
+  auto *kpi_layout = new QVBoxLayout(kpi_group);
+  kpi_layout->setContentsMargins(0, 0, 0, 0);
+  kpi_layout->setSpacing(10);
+
+  kpi_layout->addWidget(creer_kpi_widget("En Attente", kpi_attente_, "orange"));
+  kpi_layout->addWidget(creer_kpi_widget("Au Bloc", kpi_au_bloc_, "blue"));
+  kpi_layout->addWidget(
+      creer_kpi_widget("En Réveil", kpi_en_reveil_, "purple"));
+  kpi_layout->addWidget(creer_kpi_widget("Sortis", kpi_sortis_, "green"));
+  kpi_layout->addWidget(
+      creer_kpi_widget("Retards (>15min)", kpi_retard_, "#ef4444")); // Rouge
+  kpi_layout->addWidget(creer_kpi_widget("Annulés", kpi_annule_, "#64748b"));
+
+  left_layout->addWidget(kpi_group);
+  left_layout->addStretch(); // Pousse tout vers le haut pour coller au sommet
+
+  // AJOUT GAUCHE AU MAIN
+  main_layout->addWidget(left_panel);
+
+  // ============================================================
+  // COLONNE DROITE : VOTRE INTERFACE EXISTANTE
+  // ============================================================
+  // On crée un widget conteneur pour tout ce qui était dans votre QVBoxLayout
+  // précédent
+  auto *right_panel = new QWidget();
+  auto *right_layout = new QVBoxLayout(
+      right_panel); // C'est ici qu'on remet votre logique verticale
+  right_layout->setContentsMargins(0, 0, 0, 0);
+  right_layout->setSpacing(20);
+
+  // --- HEADER (VOTRE CODE) ---
   auto *header = creer_carte(this);
   auto *header_layout = new QHBoxLayout(header);
 
@@ -134,10 +334,11 @@ void RealTimeWindow::construire_ui() {
 
   header_layout->addWidget(btn_retour_);
   header_layout->addWidget(titre);
-  header_layout
-      ->addStretch(); // Pousse le titre vers la gauche mais garde le bouton
+  header_layout->addStretch();
 
-  // --- BARRE DE TEMPS (Timeline) ---
+  right_layout->addWidget(header); // On l'ajoute à la colonne de DROITE
+
+  // --- BARRE DE TEMPS (VOTRE CODE) ---
   auto *timeline_card = creer_carte(this);
   auto *timeline_layout = new QVBoxLayout(timeline_card);
 
@@ -148,9 +349,8 @@ void RealTimeWindow::construire_ui() {
   barre_progression_ = new QProgressBar(timeline_card);
   barre_progression_->setRange(0, static_cast<int>(fin_effective_minutes_));
   barre_progression_->setValue(0);
-  barre_progression_->setTextVisible(false); // On gère le texte nous-mêmes
+  barre_progression_->setTextVisible(false);
   barre_progression_->setFixedHeight(25);
-  // Style inline pour la barre (ou à mettre dans le CSS)
   barre_progression_->setStyleSheet(
       "QProgressBar::chunk { background-color: #2563eb; border-radius: 4px; }");
 
@@ -163,7 +363,9 @@ void RealTimeWindow::construire_ui() {
   timeline_layout->addWidget(barre_progression_);
   timeline_layout->addWidget(label_temps_);
 
-  // --- ZONE CENTRALE (SPLITTER : LOGS + TABLEAU) ---
+  right_layout->addWidget(timeline_card); // On l'ajoute à la colonne de DROITE
+
+  // --- ZONE CENTRALE (SPLITTER : LOGS + TABLEAU) (VOTRE CODE) ---
   auto *central_splitter = new QSplitter(Qt::Horizontal, this);
   central_splitter->setChildrenCollapsible(false);
 
@@ -195,57 +397,36 @@ void RealTimeWindow::construire_ui() {
   table_patients_->setHorizontalHeaderLabels(
       {"ID", "Type", "Arrivée", "État Actuel", "Attente/Retard"});
 
-  // Style du tableau
   table_patients_->horizontalHeader()->setSectionResizeMode(
       QHeaderView::Stretch);
   table_patients_->verticalHeader()->setVisible(false);
   table_patients_->setAlternatingRowColors(true);
-  table_patients_->setEditTriggers(
-      QAbstractItemView::NoEditTriggers); // Lecture seule
+  table_patients_->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+  // Votre style CSS pour le tableau
   table_patients_->setStyleSheet(
-      // Style global du tableau
-      "QTableWidget {"
-      "   background-color: #ffffff;"           /* Fond blanc */
-      "   alternate-background-color: #f8fafc;" /* Fond gris très clair pour 1
-                                                   ligne sur 2 */
-      "   color: #1e293b;" /* IMPORTANT : Texte gris foncé (et pas blanc) */
-      "   gridline-color: #e2e8f0;" /* Lignes de la grille */
-      "   border: 1px solid #cbd5e1;"
-      "   border-radius: 8px;"
-      "}"
-
-      // Style des items (cellules)
-      "QTableWidget::item {"
-      "   padding: 5px;"
-      "   border-bottom: 1px solid #f1f5f9;"
-      "}"
-
-      // Style de la sélection (si on clique dessus)
-      "QTableWidget::item:selected {"
-      "   background-color: #e0f2fe;" /* Bleu très clair */
-      "   color: #0c4a6e;"
-      "}"
-
-      // Style de l'en-tête
-      "QHeaderView::section {"
-      "   background-color: #f1f5f9;" /* Gris clair */
-      "   padding: 6px;"
-      "   border: none;"
-      "   border-bottom: 2px solid #cbd5e1;"
-      "   font-weight: bold;"
-      "   color: #475569;"
-      "}");
+      "QTableWidget { background-color: #ffffff; alternate-background-color: "
+      "#f8fafc; color: #1e293b; gridline-color: #e2e8f0; border: 1px solid "
+      "#cbd5e1; border-radius: 8px; }"
+      "QTableWidget::item { padding: 5px; border-bottom: 1px solid #f1f5f9; }"
+      "QTableWidget::item:selected { background-color: #e0f2fe; color: "
+      "#0c4a6e; }"
+      "QHeaderView::section { background-color: #f1f5f9; padding: 6px; border: "
+      "none; border-bottom: 2px solid #cbd5e1; font-weight: bold; color: "
+      "#475569; }");
 
   table_layout->addWidget(lbl_table);
   table_layout->addWidget(table_patients_);
 
-  // Ajout au splitter
   central_splitter->addWidget(console_container);
   central_splitter->addWidget(table_container);
-  central_splitter->setStretchFactor(0, 1); // 33% pour les logs
-  central_splitter->setStretchFactor(1, 2); // 66% pour le tableau (plus large)
+  central_splitter->setStretchFactor(0, 1);
+  central_splitter->setStretchFactor(1, 2);
 
-  // --- BARRE DE CONTRÔLE (Play/Pause/Stop) ---
+  right_layout->addWidget(central_splitter,
+                          1); // Ajout au panneau droit (facteur 1)
+
+  // --- BARRE DE CONTRÔLE (VOTRE CODE) ---
   auto *controls_card = creer_carte(this);
   auto *controls_layout = new QHBoxLayout(controls_card);
   controls_layout->setAlignment(Qt::AlignCenter);
@@ -263,33 +444,30 @@ void RealTimeWindow::construire_ui() {
   btn_pause_->setEnabled(false);
 
   btn_stop_ = new QPushButton("Réinitialiser", controls_card);
-  btn_stop_->setObjectName(
-      "secondaryButton"); // On pourrait faire un style "dangerButton" rouge
+  btn_stop_->setObjectName("secondaryButton");
   btn_stop_->setCursor(Qt::PointingHandCursor);
   btn_stop_->setFixedWidth(120);
   btn_stop_->setEnabled(false);
 
-  // --- AJOUT BOUTON EXPORT ---
   btn_export_ = new QPushButton("Sauvegarder logs", controls_card);
   btn_export_->setObjectName("secondaryButton");
   btn_export_->setCursor(Qt::PointingHandCursor);
   btn_export_->setFixedWidth(150);
-  btn_export_->setEnabled(false); // Désactivé au début
+  btn_export_->setEnabled(false);
 
   controls_layout->addWidget(btn_start_);
   controls_layout->addWidget(btn_pause_);
   controls_layout->addWidget(btn_stop_);
   controls_layout->addWidget(btn_export_);
 
-  // Assemblage final
-  main_layout->addWidget(header);
-  main_layout->addWidget(timeline_card);
-  main_layout->addWidget(central_splitter, 1); // Prend toute la place restante
-  main_layout->addWidget(controls_card);
+  right_layout->addWidget(controls_card); // Ajout au panneau droit
+
+  // AJOUT DROITE AU MAIN (Prend toute la place restante)
+  main_layout->addWidget(right_panel, 1);
 
   // --- CONNEXIONS ---
   connect(btn_retour_, &QPushButton::clicked, this, [this]() {
-    arreter_simulation(); // On coupe tout avant de partir
+    arreter_simulation();
     emit retourAccueil();
   });
 
@@ -510,6 +688,9 @@ void RealTimeWindow::tic_horloge() {
 
   // Mise à jour tableau patients
   mettre_a_jour_tableau_patients();
+
+  // Mise à jour KPIs
+  mettre_a_jour_kpi();
 
   // 4. REPLAY DES LOGS
   // On regarde tous les évènements en attente qui ont une heure <= heure
