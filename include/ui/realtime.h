@@ -52,11 +52,8 @@ private:
   void mettre_a_jour_kpi();
   void basculer_edition_inputs(bool actif);
 
-<<<<<<< HEAD
-=======
   void afficher_rapport_fin();
 
->>>>>>> 45492c1 (Fix git de merde)
   // --- PARAMÈTRES (INPUTS) ---
   QDoubleSpinBox *input_horizon_;
   QSpinBox *input_salles_;

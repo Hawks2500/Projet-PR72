@@ -1,9 +1,6 @@
 #include "ui/realtime.h"
 #include <QDateTime>
-<<<<<<< HEAD
-=======
 #include <QDialog>
->>>>>>> 45492c1 (Fix git de merde)
 #include <QDoubleSpinBox>
 #include <QFormLayout>
 #include <QHBoxLayout>
@@ -502,15 +499,6 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
     // 2. Le patient attend (Arrivé mais Chirurgie pas commencée)
     else if (p.start_surgery_time < 0 ||
              temps_actuel_minutes_ < p.start_surgery_time) {
-<<<<<<< HEAD
-      // Cas spécial : Annulé (si start_surgery_time est -1 et qu'on a dépassé
-      // un certain temps ?) Pour l'instant on suppose qu'il attend.
-      itemState->setText("EN ATTENTE BLOC");
-      itemState->setForeground(QBrush(QColor("#f97316"))); // Orange
-      itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
-
-      // Calcul du retard en temps réel
-=======
 
       // A. CAS ANNULÉ : Il n'a jamais été opéré (start < 0) ET on a dépassé
       // l'heure limite
@@ -529,7 +517,6 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
       }
 
       // Calcul de l'attente (valable dans les deux cas)
->>>>>>> 45492c1 (Fix git de merde)
       double attente = temps_actuel_minutes_ - p.arrival_time;
       itemDelay->setText(QString::number(attente, 'f', 0) + " min");
     }
@@ -621,11 +608,8 @@ void RealTimeWindow::terminer_simulation() {
   log_console_->appendPlainText(
       ">>> Vous pouvez analyser les logs ci-dessus ou les exporter.");
 
-<<<<<<< HEAD
-=======
   log_console_->appendPlainText(">>> Affichage du rapport de performance...");
 
->>>>>>> 45492c1 (Fix git de merde)
   // Mise à jour des boutons
   btn_start_->setText("Recommencer"); // Change le texte pour être clair
   btn_start_->setEnabled(
@@ -633,10 +617,7 @@ void RealTimeWindow::terminer_simulation() {
   btn_pause_->setEnabled(false);
   btn_stop_->setEnabled(true);   // Le bouton Réinitialiser reste dispo
   btn_export_->setEnabled(true); // On peut sauvegarder !
-<<<<<<< HEAD
-=======
   afficher_rapport_fin();
->>>>>>> 45492c1 (Fix git de merde)
 }
 
 void RealTimeWindow::exporter_logs() {
@@ -683,8 +664,6 @@ void RealTimeWindow::exporter_logs() {
   QMessageBox::information(this, "Succès", "Exportation CSV réussie !");
 }
 
-<<<<<<< HEAD
-=======
 void RealTimeWindow::afficher_rapport_fin() {
   // 1. CALCUL DES STATISTIQUES FINALES
   int total_programmes = 0;
@@ -854,7 +833,6 @@ void RealTimeWindow::afficher_rapport_fin() {
   rapport.exec();
 }
 
->>>>>>> 45492c1 (Fix git de merde)
 void RealTimeWindow::tic_horloge() {
   // 1. On avance le temps
   temps_actuel_minutes_ += 1.0;
