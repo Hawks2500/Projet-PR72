@@ -1,25 +1,35 @@
-# Simulateur de bloc operatoire (C++)
+# Simulateur de bloc operatoire AppMed (C++)
 
-Simulation evenementielle discrete du parcours patient dans un bloc operatoire hospitalier : arrivee, attente pre-op, bloc, reveil. Deux types de patients sont generes (programmes et urgents) avec priorisation et files d'attente separees. La simulation calcule des indicateurs clefs (temps d'attente, utilisation des salles, debit).
+Une application de simulation événementielle discrète pour optimiser la gestion d'un bloc opératoire hospitalier. Le projet permet de modéliser le parcours patient (Arrivée -> Attente -> Bloc -> Réveil -> Sortie) avec prise en compte des urgences et des ressources limitées.
+
+L'application propose désormais deux modes : une **Simulation Instantanée** pour les statistiques rapides et un **Monitorage Temps Réel** avec tableau de bord visuel.
 
 ## Compilation et execution
 
 ```bash
-make           # compile vers build/simulator
-./build/simulator --help
+mkdir build
+cd build
+cmake ..
+make
 
-# ou via le script run (recompile si besoin)
-./run --trace --policy balanced
+# Lancer l'application
+./AppMed
+
+# Lancer les tests unitaires (KPIs, logique moteur)
+./tests/test_kpi
 ```
 
-Prerequis : g++ (C++17) et Qt5 (Widgets) sur Linux/Debian.
+Prerequis : g++ (C++17) et Qt5 (Widgets) sur Linux/Debian/WSL.
 
 ### Interface graphique
 
-- `./run --gui` (ou `./build/simulator --gui`) ouvre une fenetre Qt pour saisir les parametres, lancer la simulation et visualiser le resume + une trace d'evenements.
-- Les champs couvrent horizon, capacites bloc/reveil, volumes de programmes/urgences, durees moyennes et politique d'ordonnancement.
+- `./build/AppMed` ouvre le menu principal proposant deux modes :
+- Simulation Instantanée : Configuration rapide, calcul immédiat et export CSV.
+- Simulation Temps Réel : Visualisation "En Direct" de la journée, avec timeline, tableau des patients et KPIs dynamiques.
 
 ## Principaux parametres
+
+Les paramètres sont ajustables directement via l'interface graphique (GUI) ou via le terminal :
 
 - `--gui` : lance l'interface graphique Qt.
 - `--horizon <heures>` : duree de simulation (arrivees) en heures (defaut 8).
@@ -37,12 +47,35 @@ Prerequis : g++ (C++17) et Qt5 (Widgets) sur Linux/Debian.
 
 ## Sorties
 
-Le programme affiche un resume : volumes d'entrees/sorties, attentes moyennes/maximum, utilisation des blocs et du reveil, debit horaire, patients restants en attente. Avec `--trace`, chaque arrivee/debut/fin est journalise avec son horodatage (minutes depuis t0).
+## 1. Dashboard Temps Réel
+- Timeline : Barre de progression (Bleue en temps normal, Orange en heures supplémentaires).
+
+- Tableau de suivi : État de chaque patient en direct (En attente, Au bloc, En réveil, Sortie).
+
+  - Gestion des status Retard (>15 min) et Annulé (Hors délais).
+
+- KPIs Vivants : Compteurs dynamiques pour l'occupation, les files d'attente, les retards et les annulations.
+
+## 2. Rapports
+Le programme affiche un resume final via une fenêtre de rapport :
+- Notation de la performance (Gamification : A, B, C...).
+- Graphique de répartition (Opérés vs Annulés).
+- Statistiques : volumes d'entrees/sorties, attentes moyennes/maximum, utilisation des blocs et du reveil, debit horaire.
+- Logs : Exportation possible de toutes les données en .csv.
 
 ## Structure du code
 
-- `src/main.cpp` : parse les options CLI, lance la simulation, formate les indicateurs.
-- `src/simulation.h/.cpp` : moteur evenementiel, generation des patients (electifs + urgents), files d'attente, allocation bloc/reveil, calcul des metriques.
-- `Makefile` : compilation simple (g++ -std=c++17).
-- `run` : script utilitaire pour builder puis executer.
+- `src/main.cpp` : Moteur evenementiel, generation des patients, files d'attente, allocation.
+- `src/core/` :
+  - `simulation.cpp/.h` : Moteur evenementiel, generation des patients, files d'attente, allocation.
+  - `patient.cpp/.h` : Structure de données Patient et états.
+
+- `src/ui/` : Interface graphique Qt.
+  - `home.cpp` : Menu d'accueil.
+  - `gui.cpp` : Fenêtre de configuration (Mode instantané).
+  - `realtime.cpp` : Fenêtre de monitorage (Mode temps réel) et logique d'animation.
+
+- `tests/` : Tests unitaires (test_kpi.cpp) validant la logique (Retards, Annulations, Saturation).
+
+- `CMakeLists.txt` : Configuration de la compilation (remplace le Makefile).
 
