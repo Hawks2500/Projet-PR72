@@ -78,7 +78,21 @@
 	"CROSS_CONFIG" : false,
 	"DEP_FILE" : "/home/kali/Documents/UTBM/PR72/AppMed/build/AppMed_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "AppMed_autogen/timestamp",
-	"HEADERS" : [],
+	"HEADERS" : 
+	[
+		[
+			"/home/kali/Documents/UTBM/PR72/AppMed/include/ui/gui.h",
+			"MU",
+			"JCP2AIONHY/moc_gui.cpp",
+			null
+		],
+		[
+			"/home/kali/Documents/UTBM/PR72/AppMed/include/ui/home.h",
+			"MU",
+			"JCP2AIONHY/moc_home.cpp",
+			null
+		]
+	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/kali/Documents/UTBM/PR72/AppMed/build/AppMed_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/kali/Documents/UTBM/PR72/AppMed/build/AppMed_autogen/mocs_compilation.cpp",
@@ -142,7 +156,8 @@
 			"MU",
 			null
 		],
-		[ "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp", "MU", null ]
+		[ "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp", "MU", null ],
+		[ "/home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],

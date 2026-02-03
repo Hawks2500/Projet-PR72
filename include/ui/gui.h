@@ -13,8 +13,15 @@
 #include "core/simulation.h"
 
 class SimulationWindow : public QWidget {
+  Q_OBJECT
 public:
   SimulationWindow(QWidget *parent = nullptr);
+
+  void set_mode_temps_reel(bool active) { mode_temps_reel_ = active; }
+  void reset_interface();
+
+signals:
+  void retourAccueil();
 
 private:
   void construire_ui();
@@ -55,10 +62,13 @@ private:
   QPlainTextEdit *trace_;
   QPushButton *bouton_simuler_;
   QPushButton *bouton_exporter_;
+  QPushButton *bouton_retour_;
 
   QDoubleSpinBox *duree_nettoyage_; // <--- NOUVEAU POINTEUR
 
   SimulationReport dernier_rapport_;
   SimulationConfig dernier_config_;
   std::vector<Patient> derniers_patients_;
+
+  bool mode_temps_reel_ = false;
 };

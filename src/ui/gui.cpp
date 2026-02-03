@@ -26,7 +26,7 @@
 SimulationWindow::SimulationWindow(QWidget *parent) : QWidget(parent) {
   setObjectName("root");
   construire_ui();
-  configurer_styles();
+  // configurer_styles();
 }
 
 QLabel *creer_titre_section(const QString &texte) {
@@ -46,6 +46,16 @@ void SimulationWindow::construire_ui() {
   auto *header = creer_carte(this);
   auto *header_layout = new QHBoxLayout(header);
   header_layout->setContentsMargins(16, 12, 16, 12);
+  header_layout->setSpacing(20);
+
+  // --- AJOUT DU BOUTON RETOUR ---
+  bouton_retour_ = new QPushButton("Accueil", header);
+  bouton_retour_->setObjectName("backButton"); // Pour le CSS
+  bouton_retour_->setCursor(Qt::PointingHandCursor);
+  bouton_retour_->setFixedWidth(100); // Petit bouton discret
+
+  // On l'ajoute en premier dans le layout horizontal
+  header_layout->addWidget(bouton_retour_);
 
   auto *titre = new QLabel("Simulation bloc operatoire", header);
   QFont titre_font = titre->font();
@@ -350,6 +360,11 @@ void SimulationWindow::construire_ui() {
   connect(bouton_exporter_, &QPushButton::clicked, this,
           &SimulationWindow::exporter_csv);
 
+  connect(bouton_retour_, &QPushButton::clicked, this, [this]() {
+    reset_interface();
+    emit retourAccueil();
+  });
+
   connect(trace_checkbox, &QCheckBox::toggled, this, [this](bool checked) {
     trace_->setEnabled(checked);
     if (!checked)
@@ -372,6 +387,31 @@ void SimulationWindow::configurer_styles() {
   } else {
     qWarning() << "Erreur : Impossible de charger le style :/styles.qss";
   }
+}
+
+void SimulationWindow::reset_interface() {
+  // 1. Reset des zones de texte
+  if (trace_)
+    trace_->clear();
+  if (sortie_)
+    sortie_->clear();
+
+  // 2. Désactiver le bouton export
+  bouton_exporter_->setEnabled(false);
+
+  // 3. Remettre les KPI à "zéro" ou "-"
+  val_operes_->setText("-");
+  val_attente_bloc_->setText("-");
+  val_occup_bloc_->setText("-");
+  val_occup_reveil_->setText("-");
+  val_retard_->setText("-");
+  val_annule_->setText("-");
+
+  // 4. Vider les données stockées
+  derniers_patients_.clear();
+  // On garde la config par défaut (champs spinbox) pour ne pas frustrer
+  // l'utilisateur, mais on pourrait aussi les remettre aux valeurs par défaut
+  // si voulu.
 }
 
 QFrame *SimulationWindow::creer_carte(QWidget *parent) const {
@@ -551,6 +591,16 @@ void SimulationWindow::exporter_csv() {
 }
 
 void SimulationWindow::lancer_simulation() {
+  if (mode_temps_reel_) {
+    // Pour l'instant, on affiche juste que le mode est activé
+    trace_->appendPlainText(
+        ">>> MODE TEMPS RÉEL ACTIVÉ (Simulation visuelle à venir) <<<");
+    afficher_trace("Initialisation du mode temps réel...", 0.0);
+
+    // Ici, au lieu de tout calculer d'un coup, on lancerait un QTimer...
+    return;
+  }
+
   SimulationConfig config = lire_config();
   Simulation simulation(config);
 

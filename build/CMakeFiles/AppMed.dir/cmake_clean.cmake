@@ -20,6 +20,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/AppMed.dir/src/core/simulation.cpp.o.d"
   "CMakeFiles/AppMed.dir/src/ui/gui.cpp.o"
   "CMakeFiles/AppMed.dir/src/ui/gui.cpp.o.d"
+  "CMakeFiles/AppMed.dir/src/ui/home.cpp.o"
+  "CMakeFiles/AppMed.dir/src/ui/home.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

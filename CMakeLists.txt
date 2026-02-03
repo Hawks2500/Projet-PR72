@@ -21,7 +21,11 @@ set(SOURCES
     src/core/simulation.cpp
     src/core/patient.cpp     # Si vous avez séparé la classe Patient
     src/ui/gui.cpp
+    src/ui/home.cpp
     resources/resources.qrc  # On compile les ressources (CSS) dans l'exécutable
+
+    include/ui/home.h
+    include/ui/gui.h
 )
 
 # Création de l'exécutable

@@ -9,6 +9,7 @@ AppMed_autogen/timestamp: /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
+  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp \
   /usr/bin/cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
@@ -134,13 +135,371 @@ AppMed_autogen/timestamp: /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
   /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
+  AppMed_autogen/moc_predefs.h \
   CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.31.6/CMakeSystem.cmake \
+  /home/kali/Documents/UTBM/PR72/AppMed/include/ui/gui.h \
+  /home/kali/Documents/UTBM/PR72/AppMed/include/ui/home.h \
   /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
+  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp \
   /usr/bin/cmake \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/assert.h \
+  /usr/include/c++/15/algorithm \
+  /usr/include/c++/15/array \
+  /usr/include/c++/15/atomic \
+  /usr/include/c++/15/backward/auto_ptr.h \
+  /usr/include/c++/15/backward/binders.h \
+  /usr/include/c++/15/bit \
+  /usr/include/c++/15/bits/algorithmfwd.h \
+  /usr/include/c++/15/bits/align.h \
+  /usr/include/c++/15/bits/alloc_traits.h \
+  /usr/include/c++/15/bits/allocated_ptr.h \
+  /usr/include/c++/15/bits/allocator.h \
+  /usr/include/c++/15/bits/atomic_base.h \
+  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/15/bits/atomic_wait.h \
+  /usr/include/c++/15/bits/basic_ios.h \
+  /usr/include/c++/15/bits/basic_ios.tcc \
+  /usr/include/c++/15/bits/basic_string.h \
+  /usr/include/c++/15/bits/basic_string.tcc \
+  /usr/include/c++/15/bits/c++0x_warning.h \
+  /usr/include/c++/15/bits/char_traits.h \
+  /usr/include/c++/15/bits/charconv.h \
+  /usr/include/c++/15/bits/concept_check.h \
+  /usr/include/c++/15/bits/cpp_type_traits.h \
+  /usr/include/c++/15/bits/cxxabi_forced.h \
+  /usr/include/c++/15/bits/cxxabi_init_exception.h \
+  /usr/include/c++/15/bits/erase_if.h \
+  /usr/include/c++/15/bits/exception.h \
+  /usr/include/c++/15/bits/exception_defines.h \
+  /usr/include/c++/15/bits/exception_ptr.h \
+  /usr/include/c++/15/bits/formatfwd.h \
+  /usr/include/c++/15/bits/functexcept.h \
+  /usr/include/c++/15/bits/functional_hash.h \
+  /usr/include/c++/15/bits/hash_bytes.h \
+  /usr/include/c++/15/bits/invoke.h \
+  /usr/include/c++/15/bits/ios_base.h \
+  /usr/include/c++/15/bits/iterator_concepts.h \
+  /usr/include/c++/15/bits/list.tcc \
+  /usr/include/c++/15/bits/locale_classes.h \
+  /usr/include/c++/15/bits/locale_classes.tcc \
+  /usr/include/c++/15/bits/locale_facets.h \
+  /usr/include/c++/15/bits/locale_facets.tcc \
+  /usr/include/c++/15/bits/localefwd.h \
+  /usr/include/c++/15/bits/max_size_type.h \
+  /usr/include/c++/15/bits/memory_resource.h \
+  /usr/include/c++/15/bits/memoryfwd.h \
+  /usr/include/c++/15/bits/mofunc_impl.h \
+  /usr/include/c++/15/bits/monostate.h \
+  /usr/include/c++/15/bits/move.h \
+  /usr/include/c++/15/bits/move_only_function.h \
+  /usr/include/c++/15/bits/nested_exception.h \
+  /usr/include/c++/15/bits/new_allocator.h \
+  /usr/include/c++/15/bits/node_handle.h \
+  /usr/include/c++/15/bits/ostream.h \
+  /usr/include/c++/15/bits/ostream_insert.h \
+  /usr/include/c++/15/bits/out_ptr.h \
+  /usr/include/c++/15/bits/postypes.h \
+  /usr/include/c++/15/bits/predefined_ops.h \
+  /usr/include/c++/15/bits/ptr_traits.h \
+  /usr/include/c++/15/bits/range_access.h \
+  /usr/include/c++/15/bits/ranges_algo.h \
+  /usr/include/c++/15/bits/ranges_algobase.h \
+  /usr/include/c++/15/bits/ranges_base.h \
+  /usr/include/c++/15/bits/ranges_cmp.h \
+  /usr/include/c++/15/bits/ranges_uninitialized.h \
+  /usr/include/c++/15/bits/ranges_util.h \
+  /usr/include/c++/15/bits/refwrap.h \
+  /usr/include/c++/15/bits/requires_hosted.h \
+  /usr/include/c++/15/bits/sat_arith.h \
+  /usr/include/c++/15/bits/shared_ptr.h \
+  /usr/include/c++/15/bits/shared_ptr_atomic.h \
+  /usr/include/c++/15/bits/shared_ptr_base.h \
+  /usr/include/c++/15/bits/std_abs.h \
+  /usr/include/c++/15/bits/std_function.h \
+  /usr/include/c++/15/bits/std_mutex.h \
+  /usr/include/c++/15/bits/stl_algo.h \
+  /usr/include/c++/15/bits/stl_algobase.h \
+  /usr/include/c++/15/bits/stl_bvector.h \
+  /usr/include/c++/15/bits/stl_construct.h \
+  /usr/include/c++/15/bits/stl_function.h \
+  /usr/include/c++/15/bits/stl_heap.h \
+  /usr/include/c++/15/bits/stl_iterator.h \
+  /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/15/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15/bits/stl_list.h \
+  /usr/include/c++/15/bits/stl_map.h \
+  /usr/include/c++/15/bits/stl_multimap.h \
+  /usr/include/c++/15/bits/stl_numeric.h \
+  /usr/include/c++/15/bits/stl_pair.h \
+  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/15/bits/stl_relops.h \
+  /usr/include/c++/15/bits/stl_tempbuf.h \
+  /usr/include/c++/15/bits/stl_tree.h \
+  /usr/include/c++/15/bits/stl_uninitialized.h \
+  /usr/include/c++/15/bits/stl_vector.h \
+  /usr/include/c++/15/bits/stream_iterator.h \
+  /usr/include/c++/15/bits/streambuf.tcc \
+  /usr/include/c++/15/bits/streambuf_iterator.h \
+  /usr/include/c++/15/bits/string_view.tcc \
+  /usr/include/c++/15/bits/stringfwd.h \
+  /usr/include/c++/15/bits/uniform_int_dist.h \
+  /usr/include/c++/15/bits/unique_ptr.h \
+  /usr/include/c++/15/bits/uses_allocator.h \
+  /usr/include/c++/15/bits/uses_allocator_args.h \
+  /usr/include/c++/15/bits/utility.h \
+  /usr/include/c++/15/bits/vector.tcc \
+  /usr/include/c++/15/bits/version.h \
+  /usr/include/c++/15/cctype \
+  /usr/include/c++/15/cerrno \
+  /usr/include/c++/15/charconv \
+  /usr/include/c++/15/climits \
+  /usr/include/c++/15/clocale \
+  /usr/include/c++/15/compare \
+  /usr/include/c++/15/concepts \
+  /usr/include/c++/15/cstddef \
+  /usr/include/c++/15/cstdint \
+  /usr/include/c++/15/cstdlib \
+  /usr/include/c++/15/cwchar \
+  /usr/include/c++/15/cwctype \
+  /usr/include/c++/15/debug/assertions.h \
+  /usr/include/c++/15/debug/debug.h \
+  /usr/include/c++/15/exception \
+  /usr/include/c++/15/ext/aligned_buffer.h \
+  /usr/include/c++/15/ext/alloc_traits.h \
+  /usr/include/c++/15/ext/atomicity.h \
+  /usr/include/c++/15/ext/concurrence.h \
+  /usr/include/c++/15/ext/numeric_traits.h \
+  /usr/include/c++/15/ext/string_conversions.h \
+  /usr/include/c++/15/ext/type_traits.h \
+  /usr/include/c++/15/functional \
+  /usr/include/c++/15/initializer_list \
+  /usr/include/c++/15/ios \
+  /usr/include/c++/15/iosfwd \
+  /usr/include/c++/15/iterator \
+  /usr/include/c++/15/limits \
+  /usr/include/c++/15/list \
+  /usr/include/c++/15/map \
+  /usr/include/c++/15/memory \
+  /usr/include/c++/15/new \
+  /usr/include/c++/15/numbers \
+  /usr/include/c++/15/numeric \
+  /usr/include/c++/15/optional \
+  /usr/include/c++/15/pstl/execution_defs.h \
+  /usr/include/c++/15/pstl/glue_numeric_defs.h \
+  /usr/include/c++/15/stdexcept \
+  /usr/include/c++/15/stdlib.h \
+  /usr/include/c++/15/streambuf \
+  /usr/include/c++/15/string \
+  /usr/include/c++/15/string_view \
+  /usr/include/c++/15/text_encoding \
+  /usr/include/c++/15/tuple \
+  /usr/include/c++/15/type_traits \
+  /usr/include/c++/15/typeinfo \
+  /usr/include/c++/15/unordered_map \
+  /usr/include/c++/15/utility \
+  /usr/include/c++/15/vector \
+  /usr/include/ctype.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/linux/types.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/syscall.h \
+  /usr/include/time.h \
+  /usr/include/unistd.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h \
+  /usr/lib/linux/uapi/x86/asm/bitsperlong.h \
+  /usr/lib/linux/uapi/x86/asm/errno.h \
+  /usr/lib/linux/uapi/x86/asm/posix_types.h \
+  /usr/lib/linux/uapi/x86/asm/posix_types_64.h \
+  /usr/lib/linux/uapi/x86/asm/types.h \
+  /usr/lib/linux/uapi/x86/asm/unistd.h \
+  /usr/lib/linux/uapi/x86/asm/unistd_64.h \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
@@ -205,652 +564,371 @@ AppMed_autogen/timestamp: /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
   /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
+  AppMed_autogen/moc_predefs.h \
   CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
   CMakeFiles/3.31.6/CMakeSystem.cmake \
+  /home/kali/Documents/UTBM/PR72/AppMed/include/ui/gui.h \
+  /home/kali/Documents/UTBM/PR72/AppMed/include/ui/home.h \
   /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
   /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
+  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp \
   /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake \
-  /usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake \
-  /usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/Linux.cmake \
-  /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
-  /home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp \
-  CMakeFiles/3.31.6/CMakeCXXCompiler.cmake \
-  CMakeFiles/3.31.6/CMakeSystem.cmake \
-  /home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
-  /home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp \
-  /usr/bin/cmake \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/int-ll64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/types.h \
+  /usr/include/assert.h \
+  /usr/include/c++/15/algorithm \
+  /usr/include/c++/15/array \
+  /usr/include/c++/15/atomic \
+  /usr/include/c++/15/backward/auto_ptr.h \
+  /usr/include/c++/15/backward/binders.h \
+  /usr/include/c++/15/bit \
+  /usr/include/c++/15/bits/algorithmfwd.h \
+  /usr/include/c++/15/bits/align.h \
+  /usr/include/c++/15/bits/alloc_traits.h \
+  /usr/include/c++/15/bits/allocated_ptr.h \
+  /usr/include/c++/15/bits/allocator.h \
+  /usr/include/c++/15/bits/atomic_base.h \
+  /usr/include/c++/15/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/15/bits/atomic_wait.h \
+  /usr/include/c++/15/bits/basic_ios.h \
+  /usr/include/c++/15/bits/basic_ios.tcc \
+  /usr/include/c++/15/bits/basic_string.h \
+  /usr/include/c++/15/bits/basic_string.tcc \
+  /usr/include/c++/15/bits/c++0x_warning.h \
+  /usr/include/c++/15/bits/char_traits.h \
+  /usr/include/c++/15/bits/charconv.h \
+  /usr/include/c++/15/bits/concept_check.h \
+  /usr/include/c++/15/bits/cpp_type_traits.h \
+  /usr/include/c++/15/bits/cxxabi_forced.h \
+  /usr/include/c++/15/bits/cxxabi_init_exception.h \
+  /usr/include/c++/15/bits/erase_if.h \
+  /usr/include/c++/15/bits/exception.h \
+  /usr/include/c++/15/bits/exception_defines.h \
+  /usr/include/c++/15/bits/exception_ptr.h \
+  /usr/include/c++/15/bits/formatfwd.h \
+  /usr/include/c++/15/bits/functexcept.h \
+  /usr/include/c++/15/bits/functional_hash.h \
+  /usr/include/c++/15/bits/hash_bytes.h \
+  /usr/include/c++/15/bits/invoke.h \
+  /usr/include/c++/15/bits/ios_base.h \
+  /usr/include/c++/15/bits/iterator_concepts.h \
+  /usr/include/c++/15/bits/list.tcc \
+  /usr/include/c++/15/bits/locale_classes.h \
+  /usr/include/c++/15/bits/locale_classes.tcc \
+  /usr/include/c++/15/bits/locale_facets.h \
+  /usr/include/c++/15/bits/locale_facets.tcc \
+  /usr/include/c++/15/bits/localefwd.h \
+  /usr/include/c++/15/bits/max_size_type.h \
+  /usr/include/c++/15/bits/memory_resource.h \
+  /usr/include/c++/15/bits/memoryfwd.h \
+  /usr/include/c++/15/bits/mofunc_impl.h \
+  /usr/include/c++/15/bits/monostate.h \
+  /usr/include/c++/15/bits/move.h \
+  /usr/include/c++/15/bits/move_only_function.h \
+  /usr/include/c++/15/bits/nested_exception.h \
+  /usr/include/c++/15/bits/new_allocator.h \
+  /usr/include/c++/15/bits/node_handle.h \
+  /usr/include/c++/15/bits/ostream.h \
+  /usr/include/c++/15/bits/ostream_insert.h \
+  /usr/include/c++/15/bits/out_ptr.h \
+  /usr/include/c++/15/bits/postypes.h \
+  /usr/include/c++/15/bits/predefined_ops.h \
+  /usr/include/c++/15/bits/ptr_traits.h \
+  /usr/include/c++/15/bits/range_access.h \
+  /usr/include/c++/15/bits/ranges_algo.h \
+  /usr/include/c++/15/bits/ranges_algobase.h \
+  /usr/include/c++/15/bits/ranges_base.h \
+  /usr/include/c++/15/bits/ranges_cmp.h \
+  /usr/include/c++/15/bits/ranges_uninitialized.h \
+  /usr/include/c++/15/bits/ranges_util.h \
+  /usr/include/c++/15/bits/refwrap.h \
+  /usr/include/c++/15/bits/requires_hosted.h \
+  /usr/include/c++/15/bits/sat_arith.h \
+  /usr/include/c++/15/bits/shared_ptr.h \
+  /usr/include/c++/15/bits/shared_ptr_atomic.h \
+  /usr/include/c++/15/bits/shared_ptr_base.h \
+  /usr/include/c++/15/bits/std_abs.h \
+  /usr/include/c++/15/bits/std_function.h \
+  /usr/include/c++/15/bits/std_mutex.h \
+  /usr/include/c++/15/bits/stl_algo.h \
+  /usr/include/c++/15/bits/stl_algobase.h \
+  /usr/include/c++/15/bits/stl_bvector.h \
+  /usr/include/c++/15/bits/stl_construct.h \
+  /usr/include/c++/15/bits/stl_function.h \
+  /usr/include/c++/15/bits/stl_heap.h \
+  /usr/include/c++/15/bits/stl_iterator.h \
+  /usr/include/c++/15/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/15/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15/bits/stl_list.h \
+  /usr/include/c++/15/bits/stl_map.h \
+  /usr/include/c++/15/bits/stl_multimap.h \
+  /usr/include/c++/15/bits/stl_numeric.h \
+  /usr/include/c++/15/bits/stl_pair.h \
+  /usr/include/c++/15/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/15/bits/stl_relops.h \
+  /usr/include/c++/15/bits/stl_tempbuf.h \
+  /usr/include/c++/15/bits/stl_tree.h \
+  /usr/include/c++/15/bits/stl_uninitialized.h \
+  /usr/include/c++/15/bits/stl_vector.h \
+  /usr/include/c++/15/bits/stream_iterator.h \
+  /usr/include/c++/15/bits/streambuf.tcc \
+  /usr/include/c++/15/bits/streambuf_iterator.h \
+  /usr/include/c++/15/bits/string_view.tcc \
+  /usr/include/c++/15/bits/stringfwd.h \
+  /usr/include/c++/15/bits/uniform_int_dist.h \
+  /usr/include/c++/15/bits/unique_ptr.h \
+  /usr/include/c++/15/bits/uses_allocator.h \
+  /usr/include/c++/15/bits/uses_allocator_args.h \
+  /usr/include/c++/15/bits/utility.h \
+  /usr/include/c++/15/bits/vector.tcc \
+  /usr/include/c++/15/bits/version.h \
+  /usr/include/c++/15/cctype \
+  /usr/include/c++/15/cerrno \
+  /usr/include/c++/15/charconv \
+  /usr/include/c++/15/climits \
+  /usr/include/c++/15/clocale \
+  /usr/include/c++/15/compare \
+  /usr/include/c++/15/concepts \
+  /usr/include/c++/15/cstddef \
+  /usr/include/c++/15/cstdint \
+  /usr/include/c++/15/cstdlib \
+  /usr/include/c++/15/cwchar \
+  /usr/include/c++/15/cwctype \
+  /usr/include/c++/15/debug/assertions.h \
+  /usr/include/c++/15/debug/debug.h \
+  /usr/include/c++/15/exception \
+  /usr/include/c++/15/ext/aligned_buffer.h \
+  /usr/include/c++/15/ext/alloc_traits.h \
+  /usr/include/c++/15/ext/atomicity.h \
+  /usr/include/c++/15/ext/concurrence.h \
+  /usr/include/c++/15/ext/numeric_traits.h \
+  /usr/include/c++/15/ext/string_conversions.h \
+  /usr/include/c++/15/ext/type_traits.h \
+  /usr/include/c++/15/functional \
+  /usr/include/c++/15/initializer_list \
+  /usr/include/c++/15/ios \
+  /usr/include/c++/15/iosfwd \
+  /usr/include/c++/15/iterator \
+  /usr/include/c++/15/limits \
+  /usr/include/c++/15/list \
+  /usr/include/c++/15/map \
+  /usr/include/c++/15/memory \
+  /usr/include/c++/15/new \
+  /usr/include/c++/15/numbers \
+  /usr/include/c++/15/numeric \
+  /usr/include/c++/15/optional \
+  /usr/include/c++/15/pstl/execution_defs.h \
+  /usr/include/c++/15/pstl/glue_numeric_defs.h \
+  /usr/include/c++/15/stdexcept \
+  /usr/include/c++/15/stdlib.h \
+  /usr/include/c++/15/streambuf \
+  /usr/include/c++/15/string \
+  /usr/include/c++/15/string_view \
+  /usr/include/c++/15/text_encoding \
+  /usr/include/c++/15/tuple \
+  /usr/include/c++/15/type_traits \
+  /usr/include/c++/15/typeinfo \
+  /usr/include/c++/15/unordered_map \
+  /usr/include/c++/15/utility \
+  /usr/include/c++/15/vector \
+  /usr/include/ctype.h \
+  /usr/include/errno.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/linux/errno.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/linux/types.h \
+  /usr/include/locale.h \
+  /usr/include/pthread.h \
+  /usr/include/sched.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/syscall.h \
+  /usr/include/time.h \
+  /usr/include/unistd.h \
+  /usr/include/wchar.h \
+  /usr/include/wctype.h \
+  /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
+  /usr/include/x86_64-linux-gnu/bits/endian.h \
+  /usr/include/x86_64-linux-gnu/bits/endianness.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/errno.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/floatn.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+  /usr/include/x86_64-linux-gnu/bits/locale.h \
+  /usr/include/x86_64-linux-gnu/bits/long-double.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+  /usr/include/x86_64-linux-gnu/bits/sched.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/timesize.h \
+  /usr/include/x86_64-linux-gnu/bits/timex.h \
+  /usr/include/x86_64-linux-gnu/bits/types.h \
+  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+  /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h \
+  /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h \
+  /usr/lib/linux/uapi/x86/asm/bitsperlong.h \
+  /usr/lib/linux/uapi/x86/asm/errno.h \
+  /usr/lib/linux/uapi/x86/asm/posix_types.h \
+  /usr/lib/linux/uapi/x86/asm/posix_types_64.h \
+  /usr/lib/linux/uapi/x86/asm/types.h \
+  /usr/lib/linux/uapi/x86/asm/unistd.h \
+  /usr/lib/linux/uapi/x86/asm/unistd_64.h \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake \
   /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake \
@@ -915,264 +993,980 @@ AppMed_autogen/timestamp: /home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt \
   /usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake
 
 
-/usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake:
+/usr/lib/linux/uapi/x86/asm/unistd_64.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
+/usr/lib/linux/uapi/x86/asm/posix_types_64.h:
 
-/usr/share/cmake-3.31/Modules/CMakeCXXCompiler.cmake.in:
+/usr/lib/linux/uapi/x86/asm/errno.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Tasking-DetermineCompiler.cmake:
+/usr/lib/linux/uapi/x86/asm/bitsperlong.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/syslimits.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stdarg.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:
+/usr/include/x86_64-linux-gnu/sys/syscall.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h:
 
-/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qwindowdefs.h:
 
-/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtguiglobal.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qregion.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixmap.h:
 
-/usr/share/cmake-3.31/Modules/CMakeParseLibraryArchitecture.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpaintdevice.h:
 
-/usr/share/cmake-3.31/Modules/Platform/Linux-Determine-CXX.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qimage.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qicon.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontmetrics.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcursor.h:
 
-/usr/bin/cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qversiontagging.h:
 
-/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtypeinfo.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsystemdetection.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsysinfo.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringliteral.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringlist.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringalgorithms.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h:
 
-/usr/share/cmake-3.31/Modules/CMakeSystem.cmake.in:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer_impl.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qsharedpointer.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qshareddata.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h:
 
-/usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake:
+/usr/lib/linux/uapi/x86/asm/posix_types.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerSupport.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qregexp.h:
 
-/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qrect.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs_impl.h:
 
-CMakeFiles/3.31.6/CMakeSystem.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobjectdefs.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject_impl.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qobject.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnumeric.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qnamespace.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlogging.h:
 
-/home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qlist.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qline.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/ADSP-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhash.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobal.h:
 
-/usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qgenericatomic.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainertools_impl.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvector.h:
 
-/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcompilerdetection.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/TIClang-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstring.h:
 
-/usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbasicatomic.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpair.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic_cxx11.h:
 
-/usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qarraydata.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/gthr.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/error_constants.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_base.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/c++locale.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/GNU-FindBinUtils.cmake:
+/usr/lib/gcc/x86_64-linux-gnu/15/include/stddef.h:
 
-/usr/share/cmake-3.31/Modules/CMakeFindBinUtils.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/c++config.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/c++allocator.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake:
+/usr/include/x86_64-linux-gnu/c++/15/bits/atomic_word.h:
 
-/usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake:
+/usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
-/usr/share/cmake-3.31/Modules/Platform/Linux.cmake:
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
 
-/usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake:
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
-/usr/share/cmake-3.31/Modules/CMakeParseImplicitIncludeInfo.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Borland-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
-/usr/share/cmake-3.31/Modules/CMakeParseImplicitLinkInfo.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/MSVC-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/IAR-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h:
 
-/usr/share/cmake-3.31/Modules/CMakeTestCompilerCommon.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-/usr/share/cmake-3.31/Modules/CMakeUnixFindMake.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/GNU.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h:
 
-CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpalette.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Cray-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qconfig.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-/usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/share/cmake-3.31/Modules/CMakeCompilerIdDetection.cmake:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgets-config.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/GHS-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmargins.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake:
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake:
+/usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Intel-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qprocessordetection.h:
 
-/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdatastream.h:
 
-/usr/share/cmake-3.31/Modules/Linker/GNU.cmake:
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
+/usr/include/wchar.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake:
+/usr/include/syscall.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
+/usr/include/stdc-predef.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/PGI-DetermineCompiler.cmake:
+/usr/include/wctype.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/SCO-DetermineCompiler.cmake:
+/usr/include/sched.h:
 
-/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake:
+/usr/include/pthread.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/TI-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringmatcher.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
+/usr/include/linux/types.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/Watcom-DetermineCompiler.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h:
 
-/usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake:
+/usr/include/linux/posix_types.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
+/usr/include/features.h:
 
-/usr/share/cmake-3.31/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
+/usr/include/ctype.h:
 
-/usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake:
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiodevice.h:
 
-/usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+/usr/include/c++/15/vector:
 
-/usr/share/cmake-3.31/Modules/Internal/FeatureTesting.cmake:
+/usr/include/c++/15/utility:
 
-/usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake:
+/usr/include/c++/15/type_traits:
 
-/usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
+/usr/include/c++/15/tuple:
+
+/usr/include/c++/15/string:
+
+/usr/include/c++/15/stdlib.h:
+
+/usr/include/c++/15/pstl/glue_numeric_defs.h:
+
+/usr/include/c++/15/pstl/execution_defs.h:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/c++/15/numbers:
+
+/usr/include/linux/errno.h:
+
+/usr/include/c++/15/new:
+
+/usr/include/c++/15/memory:
+
+/usr/include/c++/15/iterator:
+
+/usr/include/c++/15/iosfwd:
+
+/usr/include/c++/15/functional:
+
+/usr/include/c++/15/ext/type_traits.h:
+
+/usr/include/c++/15/ext/string_conversions.h:
+
+/usr/include/c++/15/ext/numeric_traits.h:
+
+/usr/include/c++/15/ext/atomicity.h:
+
+/usr/include/c++/15/exception:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h:
+
+/usr/include/c++/15/debug/assertions.h:
+
+/usr/include/c++/15/cwctype:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qbrush.h:
+
+/usr/include/c++/15/cwchar:
+
+/usr/include/c++/15/cstdlib:
 
 /usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake:
 
+/usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-CXX.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/c++/15/numeric:
+
+/usr/share/cmake-3.31/Modules/Platform/Linker/GNU.cmake:
+
+/usr/share/cmake-3.31/Modules/Internal/FeatureTesting.cmake:
+
+/usr/include/c++/15/initializer_list:
+
+/usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake:
+
+/usr/include/c++/15/bits/atomic_wait.h:
+
+/usr/lib/linux/uapi/x86/asm/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeInitializeConfigs.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/Watcom-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/OrangeC-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/NVHPC-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/TI-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/stl_iterator.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/SCO-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/PGI-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/AppleClang-DetermineCompiler.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake:
+
+/usr/include/c++/15/bits/basic_ios.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qchar.h:
+
+/usr/share/cmake-3.31/Modules/Linker/GNU.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/Intel-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake:
+
+/usr/include/c++/15/typeinfo:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake:
+
+/usr/include/c++/15/bits/allocated_ptr.h:
+
+/usr/include/c++/15/bits/vector.tcc:
+
+/usr/share/cmake-3.31/Modules/Compiler/GHS-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeCompilerIdDetection.cmake:
+
+/usr/share/cmake-3.31/Modules/Linker/GNU-CXX.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qmatrix.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/algorithmfwd.h:
+
+/usr/include/c++/15/bits/range_access.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/HP-CXX-DetermineCompiler.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/c++/15/string_view:
+
+/usr/share/cmake-3.31/Modules/Compiler/Embarcadero-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qstringview.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qiterator.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake:
+
+CMakeFiles/3.31.6/CMakeCXXCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/GNU.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompiler.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearray.h:
+
+/usr/include/c++/15/map:
+
+/usr/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/CrayClang-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/ARMClang-DetermineCompiler.cmake:
+
+/usr/include/c++/15/cstdint:
+
+/usr/share/cmake-3.31/Modules/CMakeUnixFindMake.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeTestCompilerCommon.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/MSVC-DetermineCompiler.cmake:
+
+/usr/include/c++/15/ext/aligned_buffer.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/Fujitsu-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeParseImplicitLinkInfo.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeParseArguments.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeParseImplicitIncludeInfo.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtwidgetsglobal.h:
+
+/usr/include/c++/15/bits/iterator_concepts.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeFindBinUtils.cmake:
+
+/usr/include/c++/15/bits/version.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
+
+/usr/include/c++/15/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/15/bits/concept_check.h:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qrgba64.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp:
+
+/usr/include/c++/15/streambuf:
+
+/usr/share/cmake-3.31/Modules/Compiler/GNU-FindBinUtils.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qbytearraylist.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake:
+
+/usr/include/c++/15/bits/std_abs.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake:
+
+/usr/include/c++/15/bits/invoke.h:
+
+/usr/include/c++/15/ext/alloc_traits.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/c++/15/charconv:
+
+/usr/share/cmake-3.31/Modules/Platform/Linux-Initialize.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfontinfo.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/NVIDIA-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/refwrap.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake:
+
+/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:
+
+/usr/include/features-time64.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/c++/15/bits/stl_iterator_base_funcs.h:
+
+/usr/share/cmake-3.31/Modules/CMakeCXXInformation.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qglobalstatic.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/ADSP-DetermineCompiler.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake:
+
+/home/kali/Documents/UTBM/PR72/AppMed/resources/resources.qrc:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtransform.h:
+
+/usr/include/c++/15/bits/stl_algo.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/ARMCC-DetermineCompiler.cmake:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/gthr-default.h:
+
+/usr/include/c++/15/limits:
+
+/home/kali/Documents/UTBM/PR72/AppMed/src/ui/gui.cpp:
+
+/usr/share/cmake-3.31/Modules/CMakeGenericSystem.cmake:
+
+/home/kali/Documents/UTBM/PR72/AppMed/src/ui/home.cpp:
+
+/usr/include/unistd.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake:
+
+/usr/include/c++/15/bits/localefwd.h:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:
+
+/usr/include/string.h:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerSupport.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/time.h:
+
+/usr/share/cmake-3.31/Modules/Platform/UnixPaths.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeSystem.cmake.in:
+
+/usr/include/c++/15/ext/concurrence.h:
+
+/usr/include/c++/15/bits/exception_ptr.h:
+
+/usr/include/c++/15/bits/c++0x_warning.h:
+
+/usr/include/c++/15/bits/std_function.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/c++/15/concepts:
+
+/home/kali/Documents/UTBM/PR72/AppMed/CMakeLists.txt:
+
+/usr/include/locale.h:
+
+/home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake:
+
+/usr/include/asm-generic/errno-base.h:
+
+/home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtcore-config.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake:
+
+/usr/include/c++/15/ios:
+
+/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInformation.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qflags.h:
+
+/home/kali/Documents/UTBM/PR72/AppMed/app/main.cpp:
+
+/usr/bin/cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake:
+
+/usr/share/cmake-3.31/Modules/Platform/Linux-Determine-CXX.cmake:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineCompiler.cmake:
+
+/usr/include/c++/15/optional:
+
+/usr/include/c++/15/bits/predefined_ops.h:
+
+/usr/include/errno.h:
+
+/usr/include/c++/15/cstddef:
+
+/usr/share/cmake-3.31/Modules/CMakeParseLibraryArchitecture.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeSystemSpecificInitialize.cmake:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/c++/15/unordered_map:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qvarlengtharray.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake:
+
+/usr/include/c++/15/bits/align.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake:
+
+/usr/include/c++/15/bits/unique_ptr.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake:
+
+/usr/lib/linux/uapi/x86/asm/types.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qatomic.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/Clang-DetermineCompilerInternal.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:
+
+/usr/include/c++/15/bits/ranges_uninitialized.h:
+
+/usr/include/c++/15/bits/stl_bvector.h:
+
+/usr/include/c++/15/bits/stl_pair.h:
+
+/usr/include/c++/15/cctype:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake:
+
+/usr/include/c++/15/bits/stl_numeric.h:
+
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake:
+
+/usr/share/cmake-3.31/Modules/Compiler/Tasking-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/stl_iterator_base_types.h:
+
 /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake:
+
+/usr/share/cmake-3.31/Modules/CMakeCXXCompiler.cmake.in:
+
+AppMed_autogen/moc_predefs.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qhashfunctions.h:
+
+/home/kali/Documents/UTBM/PR72/AppMed/include/ui/gui.h:
+
+/home/kali/Documents/UTBM/PR72/AppMed/include/ui/home.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qpoint.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/c++/15/bits/memoryfwd.h:
+
+/usr/include/c++/15/text_encoding:
+
+/usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontainerfwd.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake:
+
+/usr/include/c++/15/array:
+
+/usr/include/c++/15/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/15/bits/ranges_util.h:
+
+/usr/include/c++/15/stdexcept:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake:
+
+/usr/include/c++/15/atomic:
+
+/usr/include/c++/15/backward/binders.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/Borland-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/alloc_traits.h:
+
+/usr/include/c++/15/bit:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/15/bits/allocator.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake:
+
+/usr/include/c++/15/bits/atomic_base.h:
+
+/usr/include/c++/15/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/15/bits/memory_resource.h:
+
+/usr/include/x86_64-linux-gnu/bits/locale.h:
+
+/usr/include/c++/15/bits/basic_ios.h:
+
+/usr/include/c++/15/bits/basic_string.h:
+
+/usr/include/c++/15/bits/cpp_type_traits.h:
+
+/usr/include/c++/15/bits/char_traits.h:
+
+/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake:
+
+/usr/include/c++/15/bits/charconv.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel:
+
+/usr/include/c++/15/compare:
+
+/usr/include/c++/15/bits/cxxabi_forced.h:
+
+/usr/include/strings.h:
+
+/usr/include/c++/15/bits/exception.h:
+
+/usr/include/c++/15/bits/formatfwd.h:
+
+/usr/include/c++/15/bits/functional_hash.h:
+
+/usr/include/c++/15/bits/sat_arith.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpolygon.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qkeysequence.h:
+
+/usr/include/c++/15/algorithm:
+
+/usr/include/c++/15/bits/hash_bytes.h:
+
+/usr/include/c++/15/bits/locale_classes.tcc:
+
+/usr/share/cmake-3.31/Modules/Compiler/Cray-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/ios_base.h:
+
+/usr/include/c++/15/debug/debug.h:
+
+/usr/include/c++/15/bits/list.tcc:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qfont.h:
+
+/usr/include/c++/15/bits/locale_facets.h:
+
+/usr/include/c++/15/bits/requires_hosted.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/IAR-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/locale_facets.tcc:
+
+/usr/share/cmake-3.31/Modules/Compiler/TIClang-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/max_size_type.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/15/include/limits.h:
+
+/usr/include/c++/15/bits/monostate.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/ctype_inline.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake:
+
+/usr/include/c++/15/bits/move.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/c++/15/bits/move_only_function.h:
+
+/usr/include/c++/15/bits/nested_exception.h:
+
+/usr/include/c++/15/bits/ranges_base.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/os_defines.h:
+
+/usr/include/c++/15/bits/new_allocator.h:
+
+/usr/include/c++/15/bits/uses_allocator.h:
+
+/usr/include/c++/15/bits/node_handle.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake:
+
+/usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake:
+
+/usr/include/c++/15/bits/ostream.h:
+
+/usr/share/cmake-3.31/Modules/Platform/Linux-GNU-CXX.cmake:
+
+/usr/include/c++/15/bits/ostream_insert.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/c++/15/bits/out_ptr.h:
+
+/usr/include/c++/15/bits/postypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/c++/15/bits/mofunc_impl.h:
+
+/usr/include/c++/15/bits/ranges_algo.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/PathScale-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/ranges_cmp.h:
+
+/usr/include/c++/15/bits/shared_ptr.h:
+
+/usr/include/c++/15/bits/erase_if.h:
+
+/usr/include/c++/15/bits/stringfwd.h:
+
+/usr/include/c++/15/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/15/bits/std_mutex.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qmetatype.h:
+
+/usr/include/c++/15/bits/stl_relops.h:
+
+/usr/include/c++/15/bits/stl_algobase.h:
+
+/usr/include/c++/15/clocale:
+
+/usr/include/c++/15/bits/ptr_traits.h:
+
+/usr/include/c++/15/bits/ranges_algobase.h:
+
+/usr/include/c++/15/bits/stl_construct.h:
+
+/usr/include/c++/15/bits/stl_function.h:
+
+/usr/share/cmake-3.31/Modules/Compiler/XL-CXX-DetermineCompiler.cmake:
+
+/usr/include/c++/15/bits/exception_defines.h:
+
+/usr/include/c++/15/backward/auto_ptr.h:
+
+/usr/include/c++/15/bits/stl_heap.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/c++/15/bits/stl_list.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/c++/15/list:
+
+/usr/include/c++/15/bits/locale_classes.h:
+
+/usr/include/c++/15/bits/stl_map.h:
+
+/usr/include/c++/15/bits/stl_uninitialized.h:
+
+/usr/include/c++/15/bits/shared_ptr_base.h:
+
+/usr/include/c++/15/bits/stl_multimap.h:
+
+/usr/include/c++/15/bits/stl_tempbuf.h:
+
+/usr/include/c++/15/bits/stl_tree.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/include/c++/15/bits/functexcept.h:
+
+/usr/include/c++/15/bits/stl_vector.h:
+
+/usr/include/c++/15/bits/stream_iterator.h:
+
+/usr/include/c++/15/bits/basic_string.tcc:
+
+/usr/include/c++/15/bits/streambuf.tcc:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake:
+
+/usr/include/c++/15/bits/streambuf_iterator.h:
+
+/usr/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake:
+
+/usr/include/c++/15/bits/string_view.tcc:
+
+/usr/include/c++/15/bits/uniform_int_dist.h:
+
+/usr/include/x86_64-linux-gnu/c++/15/bits/cpu_defines.h:
+
+/usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake:
+
+/usr/include/c++/15/bits/uses_allocator_args.h:
+
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/c++/15/bits/utility.h:
+
+/usr/share/cmake-3.31/Modules/Platform/Linux.cmake:
+
+/usr/include/c++/15/cerrno:
+
+/usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake:
+
+CMakeFiles/3.31.6/CMakeSystem.cmake:
+
+/usr/include/c++/15/climits:

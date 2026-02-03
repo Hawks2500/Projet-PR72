@@ -1,3 +1,17 @@
+/* --- PAGE D'ACCUEIL --- */
+QLabel#appTitle {
+    font-size: 36pt;
+    font-weight: 900;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+QLabel#appSubtitle {
+    font-size: 14pt;
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
 /* --- Fenêtre principale --- */
 QWidget#root {
     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #f1f5f9, stop:1 #e2e8f0);
@@ -404,4 +418,26 @@ QLabel#kpiValue {
     font-size: 18pt;
     font-weight: 800;
     font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- Bouton Retour (Accueil) --- */
+QPushButton#backButton {
+    background-color: #f1f5f9; /* Gris très clair */
+    color: #64748b;            /* Texte gris */
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 8px 16px;         /* Plus petit que les gros boutons */
+    font-size: 10pt;
+}
+
+QPushButton#backButton:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    border-color: #94a3b8;
+}
+
+QPushButton#backButton:pressed {
+    background-color: #cbd5e1;
+    padding-top: 9px;
 }

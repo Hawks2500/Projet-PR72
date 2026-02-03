@@ -348,6 +348,30 @@ src/ui/gui.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/AppMed.dir/build.make CMakeFiles/AppMed.dir/src/ui/gui.cpp.s
 .PHONY : src/ui/gui.cpp.s
 
+src/ui/home.o: src/ui/home.cpp.o
+.PHONY : src/ui/home.o
+
+# target to build an object file
+src/ui/home.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AppMed.dir/build.make CMakeFiles/AppMed.dir/src/ui/home.cpp.o
+.PHONY : src/ui/home.cpp.o
+
+src/ui/home.i: src/ui/home.cpp.i
+.PHONY : src/ui/home.i
+
+# target to preprocess a source file
+src/ui/home.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AppMed.dir/build.make CMakeFiles/AppMed.dir/src/ui/home.cpp.i
+.PHONY : src/ui/home.cpp.i
+
+src/ui/home.s: src/ui/home.cpp.s
+.PHONY : src/ui/home.s
+
+# target to generate assembly for a file
+src/ui/home.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/AppMed.dir/build.make CMakeFiles/AppMed.dir/src/ui/home.cpp.s
+.PHONY : src/ui/home.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -381,6 +405,9 @@ help:
 	@echo "... src/ui/gui.o"
 	@echo "... src/ui/gui.i"
 	@echo "... src/ui/gui.s"
+	@echo "... src/ui/home.o"
+	@echo "... src/ui/home.i"
+	@echo "... src/ui/home.s"
 .PHONY : help
 
 
