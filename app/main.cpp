@@ -260,9 +260,6 @@ int main(int argc, char *argv[]) {
 
     stackedWidget->show();
     return app.exec();
-    // SimulationWindow fenetre;
-    // fenetre.show();
-    // return app.exec();
   }
 
   Simulation simulation(config);

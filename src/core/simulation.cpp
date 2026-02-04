@@ -335,10 +335,8 @@ SimulationReport Simulation::run() {
       total_wait_to_surgery += wait;
       report.max_wait_to_surgery = std::max(report.max_wait_to_surgery, wait);
 
-      // --- NOUVEAU : Calcul du Retard ---
-      // Si c'est un patient programmé et qu'il attend > 15 min, il est en
-      // retard
-      // if (p.type == PatientType::Elective && wait > 15.0) {
+      // --- Calcul du Retard ---
+      // Si c'est un patient programmé et qu'il attend > 15 min, il est en retard
       if (wait > 15.0) {
         report.operations_delayed++;
       }
@@ -355,7 +353,8 @@ SimulationReport Simulation::run() {
 
   report.patients_operated = patients_operated;
   report.patients_completed = patients_recovered;
-  // --- NOUVEAU : Calcul des Annulations ---
+  
+  // --- Calcul des Annulations ---
   // Les patients "Annulés" sont ceux qui restent en attente (pending_waiting)
   report.pending_waiting = std::max(0, patients_arrived - patients_operated);
   report.operations_cancelled = report.pending_waiting;

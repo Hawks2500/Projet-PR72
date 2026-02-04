@@ -1,7 +1,7 @@
 #include "ui/gui.h"
 
 #include <QDateTime>
-#include <QDebug> // Utile pour voir si le fichier n'est pas trouvé
+#include <QDebug>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QTextStream>
@@ -26,7 +26,6 @@
 SimulationWindow::SimulationWindow(QWidget *parent) : QWidget(parent) {
   setObjectName("root");
   construire_ui();
-  // configurer_styles();
 }
 
 QLabel *creer_titre_section(const QString &texte) {
@@ -102,8 +101,8 @@ void SimulationWindow::construire_ui() {
   // --- ZONE DE DÉFILEMENT (SCROLL AREA) ---
   auto *scroll_area = new QScrollArea(form_card);
   scroll_area->setWidgetResizable(
-      true); // <--- CRUCIAL : Permet au contenu de s'adapter en largeur
-  scroll_area->setFrameShape(QFrame::NoFrame); // Pas de bordure moche
+      true);
+  scroll_area->setFrameShape(QFrame::NoFrame); 
   scroll_area->setHorizontalScrollBarPolicy(
       Qt::ScrollBarAlwaysOff); // Pas de scroll horizontal
 
@@ -173,8 +172,6 @@ void SimulationWindow::construire_ui() {
   taux_urgences_ = new QDoubleSpinBox(this);
   taux_urgences_->setRange(0.0, 20.0);
   taux_urgences_->setValue(2.0);
-  // taux_urgences_->setDecimals(2);
-  // taux_urgences_->setSingleStep(0.25);
   taux_urgences_->setSuffix(" /h");
   taux_urgences_->setMinimumWidth(35);
   form->addRow("Taux d'urgences (λ)", taux_urgences_);
@@ -240,7 +237,6 @@ void SimulationWindow::construire_ui() {
   scroll_area->setWidget(scroll_content);
   form_card_layout->addWidget(scroll_area);
 
-  // form_card_layout->addLayout(form);
 
   // --- ZONE BOUTONS (Fixe en bas) ---
   // On met les boutons hors du scroll pour qu'ils soient toujours accessibles
@@ -263,13 +259,6 @@ void SimulationWindow::construire_ui() {
 
   form_card_layout->addWidget(actions_container);
 
-  // auto *actions = new QHBoxLayout();
-  // actions->addWidget(bouton_simuler_);
-  // actions->addWidget(bouton_exporter_);
-  // actions->addStretch();
-  // form_card_layout->addLayout(actions);
-
-  // contenu->addWidget(form_card, 2);
   contenu->addWidget(form_card, 1);
 
   auto *output_card = creer_carte(this);
@@ -450,7 +439,7 @@ SimulationConfig SimulationWindow::lire_config() const {
   SimulationConfig config;
   config.horizon_hours = horizon_->value();
   config.operating_rooms = ors_->value();
-  config.surgeon_count = chirurgiens_->value(); // <--- NOUVEAU CHAMP
+  config.surgeon_count = chirurgiens_->value();
   config.recovery_beds = lits_reveil_->value();
   config.elective_patients = nb_programmes_->value();
   config.elective_window_hours = fenetre_programmes_->value();
@@ -460,7 +449,7 @@ SimulationConfig SimulationWindow::lire_config() const {
   config.mean_recovery_minutes = duree_reveil_->value();
 
   config.cleaning_time_minutes =
-      duree_nettoyage_->value(); // <--- NOUVEAU CHAMP
+      duree_nettoyage_->value();
 
   config.policy =
       static_cast<SchedulingPolicy>(politique_->currentData().toInt());
@@ -489,7 +478,7 @@ void SimulationWindow::afficher_rapport(const SimulationConfig &config,
   double occ_reveil = report.recovery_bed_utilization * 100.0;
   val_occup_reveil_->setText(QString::number(occ_reveil, 'f', 1) + " %");
 
-  // --- NOUVEAU : Mise à jour des textes ---
+  // --- Mise à jour des textes ---
   val_retard_->setText(QString::number(report.operations_delayed));
   val_annule_->setText(QString::number(report.operations_cancelled));
 
@@ -597,7 +586,6 @@ void SimulationWindow::lancer_simulation() {
         ">>> MODE TEMPS RÉEL ACTIVÉ (Simulation visuelle à venir) <<<");
     afficher_trace("Initialisation du mode temps réel...", 0.0);
 
-    // Ici, au lieu de tout calculer d'un coup, on lancerait un QTimer...
     return;
   }
 

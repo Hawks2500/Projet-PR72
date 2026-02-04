@@ -1,6 +1,5 @@
 #include "core/patient.h"
 
-// Implémentation du constructeur paramétré
 Patient::Patient(int id, PatientType type, double arrival)
     : id(id), type(type), arrival_time(arrival) 
 {

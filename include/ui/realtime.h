@@ -28,7 +28,7 @@ public:
   explicit RealTimeWindow(QWidget *parent = nullptr);
 
 signals:
-  void retourAccueil(); // Signal pour revenir au menu
+  void retourAccueil();
 
 private slots:
   void demarrer_simulation();

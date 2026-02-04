@@ -21,7 +21,6 @@ struct Patient {
   Patient() = default;
   Patient(int id, PatientType type, double arrival);
 
-  // Méthodes utilitaires (exemple)
   bool is_urgent() const;
   bool is_completed() const;
 };

@@ -64,7 +64,7 @@ private:
   QPushButton *bouton_exporter_;
   QPushButton *bouton_retour_;
 
-  QDoubleSpinBox *duree_nettoyage_; // <--- NOUVEAU POINTEUR
+  QDoubleSpinBox *duree_nettoyage_;
 
   SimulationReport dernier_rapport_;
   SimulationConfig dernier_config_;

@@ -28,7 +28,7 @@ QFrame *RealTimeWindow::creer_carte(QWidget *parent) {
   shadow->setBlurRadius(12); // Flou (équivalent à votre 12px)
   shadow->setOffset(0, 4);   // Décalage X=0, Y=4 (équivalent à 0px 4px)
   shadow->setColor(
-      QColor(0, 0, 0, 30)); // Noir avec transparence (alpha ~10-15%)
+      QColor(0, 0, 0, 30)); 
 
   frame->setGraphicsEffect(shadow);
 
@@ -145,12 +145,11 @@ QFrame *RealTimeWindow::creer_kpi_widget(const QString &titre,
   frame->setStyleSheet(
       QString("QFrame#kpiCard {"
               "  background-color: white;"
-              "  border: 1px solid #cbd5e1;" // Bordure fine grise
-              "  border-left: 6px solid %1;" // LA BARRE COLORÉE À GAUCHE
-              "  border-radius: 8px;"        // Coins arrondis
+              "  border: 1px solid #cbd5e1;" 
+              "  border-left: 6px solid %1;" 
+              "  border-radius: 8px;"  
               "}")
           .arg(couleur));
-  // frame->setProperty("kpiColor", couleur);
 
   auto *layout = new QVBoxLayout(frame);
   layout->setContentsMargins(10, 10, 10, 10);
@@ -184,7 +183,7 @@ void RealTimeWindow::mettre_a_jour_kpi() {
   int count_reveil = 0;
   int count_sortis = 0;
 
-  // Nouveaux compteurs
+
   int count_retard = 0;
   int count_annule = 0;
 
@@ -232,13 +231,13 @@ void RealTimeWindow::mettre_a_jour_kpi() {
     }
   }
 
-  // Mise à jour des textes
+  
   kpi_attente_->setText(QString::number(count_attente));
   kpi_au_bloc_->setText(QString::number(count_bloc));
   kpi_en_reveil_->setText(QString::number(count_reveil));
   kpi_sortis_->setText(QString::number(count_sortis));
 
-  // Mise à jour des nouveaux KPIs
+  
   kpi_retard_->setText(QString::number(count_retard));
   kpi_annule_->setText(QString::number(count_annule));
 }
