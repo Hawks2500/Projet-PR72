@@ -43,14 +43,23 @@ void RealTimeWindow::precalculer_scenario() {
   // 2. On prépare une config (On pourrait ajouter des champs de config sur
   // cette page plus tard)
   SimulationConfig config;
-  config.horizon_hours = 8.0;
-  config.operating_rooms = 2;
-  config.surgeon_count = 3;
-  config.recovery_beds = 3;
-  config.elective_patients = 12;
+  config.horizon_hours = input_horizon_->value();
+  config.operating_rooms = input_salles_->value();
+  config.surgeon_count = input_chirurgiens_->value();
+  config.recovery_beds = input_lits_->value();
+  config.elective_patients = input_patients_->value();
+  config.urgent_rate_per_hour = input_urgences_->value();
   config.trace_events = true; // Important !
+
+  config.mean_surgery_minutes_elective = 60.0;
+  config.mean_surgery_minutes_urgent = 50.0;
+  config.mean_recovery_minutes = 45.0;
+  config.cleaning_time_minutes = 15.0; // On met 15 min de nettoyage par défaut
+
   // On met une seed aléatoire pour que chaque "Lecture" soit différente
   config.seed = static_cast<unsigned int>(QDateTime::currentMSecsSinceEpoch());
+
+  horizon_minutes_ = config.horizon_hours * 60.0;
 
   // 3. On crée la simulation
   Simulation sim(config);
@@ -560,16 +569,36 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
 // --- LOGIQUE DE SIMULATION ---
 
 void RealTimeWindow::demarrer_simulation() {
-  // Si on est au début (t=0), on génère un nouveau scénario
-  if (temps_actuel_minutes_ == 0.0) {
+  // Cas 1 : Démarrage initial OU Redémarrage après fin
+  // Si le temps actuel a atteint la fin, on considère que c'est un redémarrage
+  if (temps_actuel_minutes_ == 0.0 ||
+      temps_actuel_minutes_ >= fin_effective_minutes_) {
+
+    // Si c'est un redémarrage (Recommencer), on nettoie d'abord l'UI
+    if (temps_actuel_minutes_ >= fin_effective_minutes_) {
+      temps_actuel_minutes_ = 0.0;
+      barre_progression_->setValue(0);
+
+      // Reset des couleurs (on enlève l'orange potentiel)
+      barre_progression_->setStyleSheet(
+          "QProgressBar::chunk { background-color: #2563eb; border-radius: "
+          "4px; }");
+      label_temps_->setStyleSheet(
+          "font-size: 24pt; font-weight: bold; color: #1e293b;");
+      label_temps_->setText("00:00");
+    }
+
     log_console_->clear();
-    precalculer_scenario();
+    precalculer_scenario(); // On génère un nouveau jour
   }
+
+  // Cas 2 : Reprise après pause (le timer repart simplement)
 
   en_cours_ = true;
   timer_->start(50); // Vitesse : 50ms réel = 1 min simulée
 
-  btn_start_->setEnabled(false);
+  btn_start_->setText("Lecture"); // On remet le texte standard
+  btn_start_->setEnabled(false);  // On le désactive pendant que ça tourne
   btn_pause_->setEnabled(true);
   btn_stop_->setEnabled(true);
   btn_export_->setEnabled(false);
@@ -622,8 +651,7 @@ void RealTimeWindow::terminer_simulation() {
 
   // Mise à jour des boutons
   btn_start_->setText("Recommencer"); // Change le texte pour être clair
-  btn_start_->setEnabled(
-      false); // On oblige à faire "Réinitialiser" pour relancer proprement
+  btn_start_->setEnabled(true);
   btn_pause_->setEnabled(false);
   btn_stop_->setEnabled(true);   // Le bouton Réinitialiser reste dispo
   btn_export_->setEnabled(true); // On peut sauvegarder !
