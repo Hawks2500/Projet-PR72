@@ -204,10 +204,12 @@ void RealTimeWindow::mettre_a_jour_kpi() {
     } else if (temps_actuel_minutes_ >= p.start_surgery_time &&
                temps_actuel_minutes_ < p.end_surgery_time) {
       count_bloc++;
-    } else if (temps_actuel_minutes_ >= p.end_surgery_time &&
+    } else if (p.start_recovery_time >= 0 &&
+               temps_actuel_minutes_ >= p.start_recovery_time &&
                temps_actuel_minutes_ < p.end_recovery_time) {
       count_reveil++;
-    } else {
+    } else if (p.end_recovery_time >= 0 &&
+               temps_actuel_minutes_ >= p.end_recovery_time) {
       count_sortis++;
     }
 
@@ -550,11 +552,21 @@ void RealTimeWindow::mettre_a_jour_tableau_patients() {
       double attente_finale = p.start_surgery_time - p.arrival_time;
       itemDelay->setText(QString::number(attente_finale, 'f', 0) + " min");
     }
-    // 4. Le patient est en réveil (Entre fin chir et fin réveil)
+    // 4a. Attente Lit Réveil (La chirurgie est finie, mais le réveil n'a pas
+    // commencé)
     else if (temps_actuel_minutes_ >= p.end_surgery_time &&
+             (p.start_recovery_time < 0 ||
+              temps_actuel_minutes_ < p.start_recovery_time)) {
+      itemState->setText("⏳ ATTENTE LIT");
+      itemState->setForeground(QBrush(QColor("#d97706"))); // Ambre
+      itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
+    }
+    // 4b. En Réveil (Vraiment dans le lit)
+    else if (p.start_recovery_time >= 0 &&
+             temps_actuel_minutes_ >= p.start_recovery_time &&
              temps_actuel_minutes_ < p.end_recovery_time) {
       itemState->setText("🔵 EN RÉVEIL");
-      itemState->setForeground(QBrush(QColor("#8b5cf6"))); // Violet
+      itemState->setForeground(QBrush(QColor("#8b5cf6")));
       itemState->setFont(QFont("Segoe UI", 9, QFont::Bold));
     }
     // 5. Le patient est sorti
@@ -642,6 +654,27 @@ void RealTimeWindow::arreter_simulation() {
 void RealTimeWindow::terminer_simulation() {
   en_cours_ = false;
   timer_->stop();
+
+  mettre_a_jour_tableau_patients();
+  mettre_a_jour_kpi();
+
+  // 2. On remplit la barre à 100% visuellement
+  barre_progression_->setValue(barre_progression_->maximum());
+
+  // On vide les derniers logs restants (si un événement arrive pile à la
+  // dernière minute)
+  while (current_event_index_ < events_queue_.size()) {
+    const auto &ev = events_queue_[current_event_index_];
+    if (ev.time <= temps_actuel_minutes_) {
+      QString msg = QString("[t=%1 min] %2")
+                        .arg(ev.time, 0, 'f', 1)
+                        .arg(QString::fromStdString(ev.message));
+      log_console_->appendPlainText(msg);
+      current_event_index_++;
+    } else {
+      break;
+    }
+  }
 
   log_console_->appendPlainText("\n>>> Simulation terminée avec succès.");
   log_console_->appendPlainText(
@@ -916,13 +949,13 @@ void RealTimeWindow::tic_horloge() {
   // 1. On avance le temps
   temps_actuel_minutes_ += 1.0;
 
-  // 2. Fin de simulation ?
-  if (temps_actuel_minutes_ >= fin_effective_minutes_) {
-    // arreter_simulation();
-    // log_console_->appendPlainText(">>> Fin de la journée.");
-    terminer_simulation();
-    return;
-  }
+  // 3. Mise à jour Interface (Barre + Texte)
+  barre_progression_->setValue(static_cast<int>(temps_actuel_minutes_));
+  int heures = static_cast<int>(temps_actuel_minutes_ / 60);
+  int minutes = static_cast<int>(temps_actuel_minutes_) % 60;
+  label_temps_->setText(QString("%1:%2")
+                            .arg(heures, 2, 10, QChar('0'))
+                            .arg(minutes, 2, 10, QChar('0')));
 
   // --- AJOUT VISUEL : GESTION DES HEURES SUPPLÉMENTAIRES ---
   if (temps_actuel_minutes_ > horizon_minutes_) {
@@ -940,14 +973,6 @@ void RealTimeWindow::tic_horloge() {
     label_temps_->setStyleSheet(
         "font-size: 24pt; font-weight: bold; color: #1e293b;");
   }
-
-  // 3. Mise à jour Interface (Barre + Texte)
-  barre_progression_->setValue(static_cast<int>(temps_actuel_minutes_));
-  int heures = static_cast<int>(temps_actuel_minutes_ / 60);
-  int minutes = static_cast<int>(temps_actuel_minutes_) % 60;
-  label_temps_->setText(QString("%1:%2")
-                            .arg(heures, 2, 10, QChar('0'))
-                            .arg(minutes, 2, 10, QChar('0')));
 
   // Mise à jour tableau patients
   mettre_a_jour_tableau_patients();
@@ -974,6 +999,47 @@ void RealTimeWindow::tic_horloge() {
     } else {
       // L'évènement suivant est dans le futur, on arrête pour ce tick
       break;
+    }
+  }
+
+  // 6. --- CONDITION D'ARRÊT INTELLIGENTE ---
+  // On ne s'arrête que si :
+  // A. On a dépassé l'heure limite (Horizon)
+  // B. PLUS AUCUN patient n'est actif (ni au bloc, ni en réveil)
+  // C. OU si on a atteint la fin absolue calculée par la simulation (sécurité)
+
+  bool activite_en_cours = false;
+
+  // On vérifie s'il reste des gens actifs via les snapshots
+  for (const auto &p : patients_snapshots_) {
+    // Est-il au bloc ou en réveil ou en nettoyage MAINTENANT ?
+    // On regarde si le temps actuel est compris dans ses intervalles d'activité
+    bool au_bloc = (p.start_surgery_time >= 0 &&
+                    temps_actuel_minutes_ < p.end_surgery_time);
+    bool en_reveil = (p.start_recovery_time >= 0 &&
+                      temps_actuel_minutes_ < p.end_recovery_time);
+
+    // Attention : il faut aussi compter le temps de nettoyage !
+    // (end_surgery_time + cleaning_time).
+    // Mais pour simplifier, si 'Au bloc' ou 'En réveil' est vrai, c'est
+    // suffisant.
+
+    if (au_bloc || en_reveil) {
+      activite_en_cours = true;
+      break; // Pas la peine de chercher plus loin, on continue !
+    }
+  }
+
+  // Condition finale :
+  // - Si on est avant l'horizon : on continue toujours.
+  // - Si on est après l'horizon : on s'arrête SEULEMENT si plus d'activité.
+  // - Sécurité : on s'arrête quand même si on dépasse largement la fin prévue
+  // (fin_effective).
+
+  if (temps_actuel_minutes_ >= horizon_minutes_) {
+    if (!activite_en_cours ||
+        temps_actuel_minutes_ >= fin_effective_minutes_ + 30.0) {
+      terminer_simulation();
     }
   }
 }

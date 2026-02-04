@@ -156,6 +156,25 @@ tests/test_kpi_autogen/timestamp: CMakeFiles/3.31.6/CMakeCCompiler.cmake \
   /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-C.cmake \
   /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
   /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-C.cmake \
+  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake \
+  CMakeFiles/3.31.6/CMakeCCompiler.cmake \
+  /home/kali/Documents/UTBM/PR72/AppMed/src/core/patient.cpp \
+  /home/kali/Documents/UTBM/PR72/AppMed/src/core/simulation.cpp \
+  /home/kali/Documents/UTBM/PR72/AppMed/tests/CMakeLists.txt \
+  /home/kali/Documents/UTBM/PR72/AppMed/tests/test_kpi.cpp \
+  /usr/bin/cmake \
+  /usr/share/cmake-3.31/Modules/CMakeCInformation.cmake \
+  /usr/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake \
+  /usr/share/cmake-3.31/Modules/CMakeLanguageInformation.cmake \
+  /usr/share/cmake-3.31/Modules/Compiler/GNU-C.cmake \
+  /usr/share/cmake-3.31/Modules/Compiler/GNU.cmake \
+  /usr/share/cmake-3.31/Modules/Internal/CMakeCLinkerInformation.cmake \
+  /usr/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake \
+  /usr/share/cmake-3.31/Modules/Linker/GNU-C.cmake \
+  /usr/share/cmake-3.31/Modules/Linker/GNU.cmake \
+  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU-C.cmake \
+  /usr/share/cmake-3.31/Modules/Platform/Linker/Linux-GNU.cmake \
+  /usr/share/cmake-3.31/Modules/Platform/Linux-GNU-C.cmake \
   /usr/share/cmake-3.31/Modules/Platform/Linux-GNU.cmake
 
 

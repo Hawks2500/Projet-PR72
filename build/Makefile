@@ -179,6 +179,19 @@ test_kpi/fast:
 .PHONY : test_kpi/fast
 
 #=============================================================================
+# Target rules for targets named test_algos
+
+# Build rule for target.
+test_algos: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algos
+.PHONY : test_algos
+
+# fast build rule for target.
+test_algos/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/build
+.PHONY : test_algos/fast
+
+#=============================================================================
 # Target rules for targets named test_kpi_autogen_timestamp_deps
 
 # Build rule for target.
@@ -203,6 +216,32 @@ test_kpi_autogen: cmake_check_build_system
 test_kpi_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi_autogen.dir/build.make tests/CMakeFiles/test_kpi_autogen.dir/build
 .PHONY : test_kpi_autogen/fast
+
+#=============================================================================
+# Target rules for targets named test_algos_autogen_timestamp_deps
+
+# Build rule for target.
+test_algos_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algos_autogen_timestamp_deps
+.PHONY : test_algos_autogen_timestamp_deps
+
+# fast build rule for target.
+test_algos_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/build.make tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/build
+.PHONY : test_algos_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named test_algos_autogen
+
+# Build rule for target.
+test_algos_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algos_autogen
+.PHONY : test_algos_autogen
+
+# fast build rule for target.
+test_algos_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos_autogen.dir/build.make tests/CMakeFiles/test_algos_autogen.dir/build
+.PHONY : test_algos_autogen/fast
 
 AppMed_autogen/3YJK5W5UP7/qrc_resources.o: AppMed_autogen/3YJK5W5UP7/qrc_resources.cpp.o
 .PHONY : AppMed_autogen/3YJK5W5UP7/qrc_resources.o
@@ -407,9 +446,12 @@ help:
 	@echo "... test"
 	@echo "... AppMed_autogen"
 	@echo "... AppMed_autogen_timestamp_deps"
+	@echo "... test_algos_autogen"
+	@echo "... test_algos_autogen_timestamp_deps"
 	@echo "... test_kpi_autogen"
 	@echo "... test_kpi_autogen_timestamp_deps"
 	@echo "... AppMed"
+	@echo "... test_algos"
 	@echo "... test_kpi"
 	@echo "... AppMed_autogen/3YJK5W5UP7/qrc_resources.o"
 	@echo "... AppMed_autogen/3YJK5W5UP7/qrc_resources.i"

@@ -141,6 +141,20 @@ test_kpi/fast:
 .PHONY : test_kpi/fast
 
 # Convenience name for target.
+tests/CMakeFiles/test_algos.dir/rule:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_algos.dir/rule
+.PHONY : tests/CMakeFiles/test_algos.dir/rule
+
+# Convenience name for target.
+test_algos: tests/CMakeFiles/test_algos.dir/rule
+.PHONY : test_algos
+
+# fast build rule for target.
+test_algos/fast:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/build
+.PHONY : test_algos/fast
+
+# Convenience name for target.
 tests/CMakeFiles/test_kpi_autogen_timestamp_deps.dir/rule:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_kpi_autogen_timestamp_deps.dir/rule
 .PHONY : tests/CMakeFiles/test_kpi_autogen_timestamp_deps.dir/rule
@@ -168,12 +182,41 @@ test_kpi_autogen/fast:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi_autogen.dir/build.make tests/CMakeFiles/test_kpi_autogen.dir/build
 .PHONY : test_kpi_autogen/fast
 
+# Convenience name for target.
+tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/rule:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/rule
+.PHONY : tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/rule
+
+# Convenience name for target.
+test_algos_autogen_timestamp_deps: tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/rule
+.PHONY : test_algos_autogen_timestamp_deps
+
+# fast build rule for target.
+test_algos_autogen_timestamp_deps/fast:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/build.make tests/CMakeFiles/test_algos_autogen_timestamp_deps.dir/build
+.PHONY : test_algos_autogen_timestamp_deps/fast
+
+# Convenience name for target.
+tests/CMakeFiles/test_algos_autogen.dir/rule:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/test_algos_autogen.dir/rule
+.PHONY : tests/CMakeFiles/test_algos_autogen.dir/rule
+
+# Convenience name for target.
+test_algos_autogen: tests/CMakeFiles/test_algos_autogen.dir/rule
+.PHONY : test_algos_autogen
+
+# fast build rule for target.
+test_algos_autogen/fast:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos_autogen.dir/build.make tests/CMakeFiles/test_algos_autogen.dir/build
+.PHONY : test_algos_autogen/fast
+
 __/src/core/patient.o: __/src/core/patient.cpp.o
 .PHONY : __/src/core/patient.o
 
 # target to build an object file
 __/src/core/patient.cpp.o:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/patient.cpp.o
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/patient.cpp.o
 .PHONY : __/src/core/patient.cpp.o
 
 __/src/core/patient.i: __/src/core/patient.cpp.i
@@ -182,6 +225,7 @@ __/src/core/patient.i: __/src/core/patient.cpp.i
 # target to preprocess a source file
 __/src/core/patient.cpp.i:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/patient.cpp.i
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/patient.cpp.i
 .PHONY : __/src/core/patient.cpp.i
 
 __/src/core/patient.s: __/src/core/patient.cpp.s
@@ -190,6 +234,7 @@ __/src/core/patient.s: __/src/core/patient.cpp.s
 # target to generate assembly for a file
 __/src/core/patient.cpp.s:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/patient.cpp.s
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/patient.cpp.s
 .PHONY : __/src/core/patient.cpp.s
 
 __/src/core/simulation.o: __/src/core/simulation.cpp.o
@@ -198,6 +243,7 @@ __/src/core/simulation.o: __/src/core/simulation.cpp.o
 # target to build an object file
 __/src/core/simulation.cpp.o:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/simulation.cpp.o
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/simulation.cpp.o
 .PHONY : __/src/core/simulation.cpp.o
 
 __/src/core/simulation.i: __/src/core/simulation.cpp.i
@@ -206,6 +252,7 @@ __/src/core/simulation.i: __/src/core/simulation.cpp.i
 # target to preprocess a source file
 __/src/core/simulation.cpp.i:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/simulation.cpp.i
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/simulation.cpp.i
 .PHONY : __/src/core/simulation.cpp.i
 
 __/src/core/simulation.s: __/src/core/simulation.cpp.s
@@ -214,7 +261,56 @@ __/src/core/simulation.s: __/src/core/simulation.cpp.s
 # target to generate assembly for a file
 __/src/core/simulation.cpp.s:
 	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_kpi.dir/build.make tests/CMakeFiles/test_kpi.dir/__/src/core/simulation.cpp.s
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/__/src/core/simulation.cpp.s
 .PHONY : __/src/core/simulation.cpp.s
+
+test_algos.o: test_algos.cpp.o
+.PHONY : test_algos.o
+
+# target to build an object file
+test_algos.cpp.o:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos.cpp.o
+.PHONY : test_algos.cpp.o
+
+test_algos.i: test_algos.cpp.i
+.PHONY : test_algos.i
+
+# target to preprocess a source file
+test_algos.cpp.i:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos.cpp.i
+.PHONY : test_algos.cpp.i
+
+test_algos.s: test_algos.cpp.s
+.PHONY : test_algos.s
+
+# target to generate assembly for a file
+test_algos.cpp.s:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos.cpp.s
+.PHONY : test_algos.cpp.s
+
+test_algos_autogen/mocs_compilation.o: test_algos_autogen/mocs_compilation.cpp.o
+.PHONY : test_algos_autogen/mocs_compilation.o
+
+# target to build an object file
+test_algos_autogen/mocs_compilation.cpp.o:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos_autogen/mocs_compilation.cpp.o
+.PHONY : test_algos_autogen/mocs_compilation.cpp.o
+
+test_algos_autogen/mocs_compilation.i: test_algos_autogen/mocs_compilation.cpp.i
+.PHONY : test_algos_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+test_algos_autogen/mocs_compilation.cpp.i:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos_autogen/mocs_compilation.cpp.i
+.PHONY : test_algos_autogen/mocs_compilation.cpp.i
+
+test_algos_autogen/mocs_compilation.s: test_algos_autogen/mocs_compilation.cpp.s
+.PHONY : test_algos_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+test_algos_autogen/mocs_compilation.cpp.s:
+	cd /home/kali/Documents/UTBM/PR72/AppMed/build && $(MAKE) $(MAKESILENT) -f tests/CMakeFiles/test_algos.dir/build.make tests/CMakeFiles/test_algos.dir/test_algos_autogen/mocs_compilation.cpp.s
+.PHONY : test_algos_autogen/mocs_compilation.cpp.s
 
 test_kpi.o: test_kpi.cpp.o
 .PHONY : test_kpi.o
@@ -273,8 +369,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_algos_autogen"
+	@echo "... test_algos_autogen_timestamp_deps"
 	@echo "... test_kpi_autogen"
 	@echo "... test_kpi_autogen_timestamp_deps"
+	@echo "... test_algos"
 	@echo "... test_kpi"
 	@echo "... __/src/core/patient.o"
 	@echo "... __/src/core/patient.i"
@@ -282,6 +381,12 @@ help:
 	@echo "... __/src/core/simulation.o"
 	@echo "... __/src/core/simulation.i"
 	@echo "... __/src/core/simulation.s"
+	@echo "... test_algos.o"
+	@echo "... test_algos.i"
+	@echo "... test_algos.s"
+	@echo "... test_algos_autogen/mocs_compilation.o"
+	@echo "... test_algos_autogen/mocs_compilation.i"
+	@echo "... test_algos_autogen/mocs_compilation.s"
 	@echo "... test_kpi.o"
 	@echo "... test_kpi.i"
 	@echo "... test_kpi.s"

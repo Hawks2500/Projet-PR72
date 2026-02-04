@@ -285,8 +285,7 @@ SimulationReport Simulation::run() {
     const Event current = events_.top();
     events_.pop();
     const double now = current.time;
-    if (now > horizon_minutes_ * 1.5) {
-      // Guard against runaway scheduling; horizon governs arrivals.
+    if (now > horizon_minutes_ * 2.25) {
       break;
     }
     switch (current.type) {
