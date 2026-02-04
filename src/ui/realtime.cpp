@@ -705,27 +705,42 @@ void RealTimeWindow::afficher_rapport_fin() {
   }
 
   double attente_moyenne = (operes > 0) ? (temps_attente_total / operes) : 0.0;
+
   int total_patients = total_programmes + total_urgences;
   double taux_succes =
       (total_patients > 0)
           ? (static_cast<double>(operes) / total_patients * 100.0)
           : 0.0;
+  double taux_retard =
+      (operes > 0) ? (static_cast<double>(retards) / operes * 100.0) : 0.0;
+
+  double taux_final = taux_succes - (0.5 * taux_retard);
+  if (taux_final < 0.0)
+    taux_final = 0.0;
 
   // Calcul de la Note (Gamification)
   QString note = "C";
   QString couleur_note = "orange";
-  if (taux_succes >= 95.0 && retards == 0) {
+  if (taux_final >= 95.0 && retards == 0) {
     note = "A+";
     couleur_note = "#10b981";
   } // Vert
-  else if (taux_succes >= 90.0) {
+  else if (taux_final >= 90.0) {
     note = "A";
     couleur_note = "#10b981";
-  } else if (taux_succes >= 80.0) {
+  } else if (taux_final >= 80.0) {
     note = "B";
     couleur_note = "#3b82f6";
   } // Bleu
-  else if (taux_succes < 50.0) {
+  else if (taux_final >= 65.0) {
+    note = "C";
+    couleur_note = "orange";
+  } // Orange
+  else if (taux_final >= 50.0) {
+    note = "D";
+    couleur_note = "#f59e0b";
+  } // Jaune
+  else if (taux_final < 50.0) {
     note = "F";
     couleur_note = "#ef4444";
   } // Rouge
@@ -733,7 +748,7 @@ void RealTimeWindow::afficher_rapport_fin() {
   // 2. CRÉATION DE LA FENÊTRE (DIALOG)
   QDialog rapport(this);
   rapport.setWindowTitle("Rapport de Fin de Journée");
-  rapport.setFixedSize(500, 450);
+  rapport.setFixedSize(580, 500);
   rapport.setStyleSheet("background-color: white;");
 
   auto *layout = new QVBoxLayout(&rapport);
@@ -794,26 +809,52 @@ void RealTimeWindow::afficher_rapport_fin() {
   grid_frame->setStyleSheet("background-color: #f8fafc; border-radius: 8px; "
                             "border: 1px solid #e2e8f0;");
   auto *grid = new QGridLayout(grid_frame);
-  grid->setContentsMargins(15, 15, 15, 15);
-  grid->setVerticalSpacing(15);
+  grid->setContentsMargins(20, 20, 20, 20);
+  grid->setHorizontalSpacing(30);
+  grid->setVerticalSpacing(10);
 
-  auto add_stat = [&](const QString &label, const QString &val, int r, int c) {
+  grid->setColumnStretch(0, 1);
+  grid->setColumnStretch(1, 1);
+  grid->setColumnStretch(2, 1);
+
+  auto add_stat = [&](const QString &label, const QString &val, int r, int c,
+                      bool highlight = false) {
     auto *l = new QLabel(label);
-    l->setStyleSheet("color: #64748b;");
+    l->setStyleSheet("color: #64748b; font-size: 10pt;");
     auto *v = new QLabel(val);
-    v->setStyleSheet("color: #0f172a; font-weight: bold; font-size: 11pt;");
+    // Si highlight est vrai, on met en gros et en couleur
+    if (highlight)
+      v->setStyleSheet(QString("color: %1; font-weight: 900; font-size: 14pt;")
+                           .arg(couleur_note));
+    else
+      v->setStyleSheet("color: #0f172a; font-weight: bold; font-size: 12pt;");
     grid->addWidget(l, r, c);
     grid->addWidget(v, r + 1, c);
   };
 
   add_stat("Total Patients", QString::number(total_patients), 0, 0);
-  add_stat("Urgences", QString::number(total_urgences), 0, 1);
-  add_stat("Taux Succès", QString::number(taux_succes, 'f', 1) + "%", 0, 2);
+  add_stat("Dont Programmés", QString::number(total_programmes), 0,
+           1); // <--- AJOUTÉ
+  add_stat("Dont Urgences", QString::number(total_urgences), 0,
+           2); // <--- AJOUTÉ
 
+  // --- LIGNE 2 : PERFORMANCE ---
   add_stat("Attente Moy.", QString::number(attente_moyenne, 'f', 0) + " min", 2,
            0);
-  add_stat("Opérations Retardées", QString::number(retards), 2, 1);
-  add_stat("Annulations", QString::number(annules), 2, 2);
+  // Score Final mis en valeur au centre ou à droite
+  add_stat("Score Final", QString::number(taux_final, 'f', 1) + " / 100", 2, 1,
+           true);
+
+  add_stat("Taux Succès", QString::number(taux_succes, 'f', 1) + " %", 2, 2);
+
+  // --- LIGNE 3 : RÉSULTATS OPÉRATIONNELS ---
+  add_stat("Opérations", QString::number(operes), 4, 0);
+
+  QString texte_retard =
+      QString::number(retards) + QString(" (%1%)").arg(taux_retard, 0, 'f', 0);
+  add_stat("Dont Retards", texte_retard, 4, 1);
+
+  add_stat("Annulations", QString::number(annules), 4, 2);
 
   layout->addWidget(grid_frame);
 
